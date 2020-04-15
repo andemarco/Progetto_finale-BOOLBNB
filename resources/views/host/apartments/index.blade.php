@@ -6,12 +6,12 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Dashboard</div>
-                @foreach ($apartments as $apartment)
                 <div class="card-body">
-                    @dd($apartment['meters'])
+                   @foreach ($apartments as $apartment)
+                       @dd($apartment['meters'])
+                   @endforeach 
                         
-                    </div>
-                @endforeach
+                </div>
             </div>
         </div>
     </div>
