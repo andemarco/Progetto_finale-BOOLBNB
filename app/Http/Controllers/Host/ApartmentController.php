@@ -104,7 +104,12 @@ class ApartmentController extends Controller
      */
     public function show($id)
     {
-        //
+        $apartment = Apartment::find($id);
+
+        if(empty($apartment)) {
+            abort('404');
+        } 
+        return view ('host.apartments.show', compact('apartment'));
     }
 
     /**
@@ -115,7 +120,15 @@ class ApartmentController extends Controller
      */
     public function edit($id)
     {
-        //
+        $services = Service::all();
+        $apartment = Apartment::find($id);
+
+        $data = [
+            'services'=> $services,
+            'apartment'=> $apartment,
+        ];
+
+        return view('host.apartments.edit', $data);
     }
 
     /**
@@ -125,9 +138,38 @@ class ApartmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Apartment $apartment)
     {
-        //
+        $userId = Auth::user()->id;
+        $request->validate($this->validateData);
+        $data = $request->all();
+
+        $apartment->user_id = $userId;
+        $apartment->number_of_rooms = $data['number_of_rooms'];
+        $apartment->number_of_beds = $data['number_of_beds'];
+        $apartment->number_of_bath = $data['number_of_bath'];
+        $apartment->meters = $data['meters'];
+        $apartment->address = $data['address'];
+        $apartment->latitude = $data['latitude'];
+        $apartment->longitude = $data['longitude'];
+        $apartment->price_for_night = $data['price_for_night'];
+        $apartment->image_path = Storage::disk('public')->put('images', $data['image_path']);
+        $apartment->published = $data['published'];
+
+        $updated = $apartment->update();
+       
+        
+        if (!$updated) {
+            return redirect()->back();
+        }
+
+        $services = $data['services'];
+        if (empty($services)) {
+            $apartment->services()->sync($services);
+        }
+        
+        return redirect()->route('host.apartments.show', $apartment->id);
+
     }
 
     /**
