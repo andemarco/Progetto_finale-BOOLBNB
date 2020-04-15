@@ -1,6 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+@if (session('delete'))
+    <div class="alert alert-danger">
+      You deleted the apartment: {{session('delete')->id}}
+    </div>
+@endif
 <div class="container">
         <a class="btn btn-primary" href="{{route('host.apartments.create')}}">Insert Apartments</a>
       </div>
@@ -35,14 +40,14 @@
             <td>{{$apartment->price_for_night}}</td>
             <td>{{$apartment->image_path}}</td>
             <td>{{$apartment->published}}</td>
-            {{-- <td><a class="btn btn-primary" href="{{route('host.apartments.show', $apartment->id)}}">View</a> </td>
-            <td><a class="btn btn-primary" href="{{route('admin.posts.edit', $post->slug)}}">Edit</a> </td>
+            <td><a class="btn btn-primary" href="{{route('host.apartments.show', $apartment->id)}}">View</a> </td>
+            <td><a class="btn btn-primary" href="{{route('host.apartments.edit', $apartment->id)}}">Edit</a> </td>
             <td>
-            <form action="{{route('admin.posts.destroy', $post)}}" method="post">
+            <form action="{{route('host.apartments.destroy', $apartment)}}" method="post">
                 @csrf
                 @method('DELETE')
                 <button class="btn btn-danger" type="submit">Delete</button>  
-              </form> --}}
+              </form>
             </td>
           </tr>
           @endforeach

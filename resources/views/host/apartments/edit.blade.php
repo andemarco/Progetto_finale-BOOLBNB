@@ -53,7 +53,7 @@
           @foreach ($services as $service)
           <div>
             <span>{{$service->name}}</span>
-            <input type="checkbox" name="services[]" value="{{$service->id}}">
+            <input type="checkbox" name="services[]" value="{{$service->id}}" {{($apartment->services->contains($service->id)) ? 'checked' : ''}}>
           </div>
           @endforeach
         </div>

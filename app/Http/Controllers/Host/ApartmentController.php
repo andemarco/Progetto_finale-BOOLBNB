@@ -88,7 +88,7 @@ class ApartmentController extends Controller
         }
 
         $services = $data['services'];
-        if (empty($services)) {
+        if (!empty($services)) {
             $newApartment->services()->attach($services);
         }
         
@@ -164,7 +164,7 @@ class ApartmentController extends Controller
         }
 
         $services = $data['services'];
-        if (empty($services)) {
+        if (!empty($services)) {
             $apartment->services()->sync($services);
         }
         
@@ -178,8 +178,16 @@ class ApartmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Apartment $apartment)
     {
-        //
+        if (empty($apartment)) {
+            abort('404');
+        }
+
+        $apartment->services()->detach();
+
+        $apartment->delete();
+
+        return redirect()->route('host.apartments.index')->with('delete', $apartment);
     }
 }
