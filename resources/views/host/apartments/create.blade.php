@@ -7,6 +7,19 @@
         @csrf
         @method('POST')
         <div class="form-group">
+          <label for="title">Title</label>
+          <input class="form-control @error('title') is-invalid @enderror" type="text" name="title">
+          @error('title')
+              <span class="invalid-feedback" role="alert">
+                  <strong>{{ $message }}</strong>
+              </span>
+          @enderror
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input class="form-control" type="text" name="description">
+        </div>
+        <div class="form-group">
           <label for="number_of_rooms">Number of rooms</label>
           <input class="form-control" type="text" name="number_of_rooms">
         </div>

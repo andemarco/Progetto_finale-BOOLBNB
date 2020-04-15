@@ -19,6 +19,8 @@ class ApartmentsTableSeeder extends Seeder
         for ($i=0; $i < 10; $i++) { 
             $newApartment = new Apartment;
             $newApartment->user_id = rand(1, 6);
+            $newApartment->title = $faker->sentence;
+            $newApartment->description = $faker->text($maxNbChars = 200);
             $newApartment->number_of_rooms = rand(1, 6);
             $newApartment->number_of_bath = rand(1, 2);
             $newApartment->number_of_beds = rand(1, 5);

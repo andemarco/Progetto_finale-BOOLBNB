@@ -17,7 +17,8 @@ class CreateApartmentsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
-            
+            $table->string('title');
+            $table->mediumText('description');
             $table->integer('number_of_rooms');
             $table->integer('number_of_bath');
             $table->integer('number_of_beds');

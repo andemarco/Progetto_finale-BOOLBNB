@@ -13,6 +13,8 @@
         <thead>
           <tr>
             <th>ID</th>
+            <th>Title</th>
+            <th>Description</th>
             <th>N. Room</th>
             <th>N. Beds</th>
             <th>N. Bath</th>
@@ -23,13 +25,15 @@
             <th>Price</th>
             <th>Image</th>
             <th>Published</th>
-            <th colspan="11"></th>
+            <th colspan="13"></th>
           </tr>
         </thead>
         <tbody>
           @foreach ($apartments as $apartment)
           <tr>
             <td>{{$apartment->id}}</td>
+            <td>{{$apartment->title}}</td>
+            <td>{{$apartment->description}}</td>
             <td>{{$apartment->number_of_rooms}}</td>
             <td>{{$apartment->number_of_bath}}</td>
             <td>{{$apartment->number_of_beds}}</td>

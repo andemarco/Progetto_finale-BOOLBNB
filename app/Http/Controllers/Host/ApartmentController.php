@@ -23,6 +23,8 @@ class ApartmentController extends Controller
     public function __construct()
     {
         $this->validateData = [
+            'title' => 'required|string|max:150',
+            'description' => 'required|string|max:1500',
             'number_of_rooms' => 'required|numeric',
             'number_of_bath' => 'required|numeric',
             'number_of_beds' => 'required|numeric',
@@ -68,8 +70,17 @@ class ApartmentController extends Controller
         $request->validate($this->validateData);
         $data = $request->all();
 
+        if (empty($data['image_path'])) {
+            $path = null;
+        } else {
+            $path = Storage::disk('public')->put('images', $data['image_path']);
+        }
+
+
         $newApartment = new Apartment;
         $newApartment->user_id = $userId;
+        $newApartment->title = $data['title'];
+        $newApartment->description = $data['description'];
         $newApartment->number_of_rooms = $data['number_of_rooms'];
         $newApartment->number_of_beds = $data['number_of_beds'];
         $newApartment->number_of_bath = $data['number_of_bath'];
@@ -78,7 +89,7 @@ class ApartmentController extends Controller
         $newApartment->latitude = $data['latitude'];
         $newApartment->longitude = $data['longitude'];
         $newApartment->price_for_night = $data['price_for_night'];
-        $newApartment->image_path = Storage::disk('public')->put('images', $data['image_path']);
+        $newApartment->image_path = $path;
         $newApartment->published = $data['published'];
 
         $saved = $newApartment->save();
@@ -144,6 +155,11 @@ class ApartmentController extends Controller
         $request->validate($this->validateData);
         $data = $request->all();
 
+        if (empty($data['image_path'])) {
+            $path = $apartment->image_path;
+        } else {
+            $path = Storage::disk('public')->put('images', $data['image_path']);
+        }
         $apartment->user_id = $userId;
         $apartment->number_of_rooms = $data['number_of_rooms'];
         $apartment->number_of_beds = $data['number_of_beds'];
@@ -153,7 +169,7 @@ class ApartmentController extends Controller
         $apartment->latitude = $data['latitude'];
         $apartment->longitude = $data['longitude'];
         $apartment->price_for_night = $data['price_for_night'];
-        $apartment->image_path = Storage::disk('public')->put('images', $data['image_path']);
+        $apartment->image_path = $path;
         $apartment->published = $data['published'];
 
         $updated = $apartment->update();
