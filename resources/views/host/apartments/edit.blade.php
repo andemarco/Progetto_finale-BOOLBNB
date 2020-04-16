@@ -53,13 +53,6 @@
           <select class="custom-select" id="inputGroupSelect01" name="published">
             <option value="0" {{ ($apartment->published == 0) ? 'selected' : '' }}>No Published</option>
             <option value="1" {{ ($apartment->published == 1) ? 'selected' : '' }}>Published</option>
-            {{-- @if ($apartment->published == 0)
-            <option value="0" selected>No Published</option>
-            <option value="1">Published</option>
-            @elseif ($apartment->published == 1)
-            <option value="0">No Published</option>
-            <option value="1" selected>Published</option>
-            @endif --}}
           </select>
         </div>
         <div class="form-group">

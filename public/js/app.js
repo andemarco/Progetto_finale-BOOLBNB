@@ -37328,6 +37328,63 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+
+$(document).ready(function () {
+  $('.btn-search').on('click', function () {
+    var address = $('#address').val();
+    searchAddress(address);
+  });
+  $(document).on('click', '.name', function () {
+    var inputAddress = $(this).text();
+    addCorrectAddress(inputAddress);
+  });
+}); //---------------------------------------FUNCTIONS------------------------------------------------
+// FUNZIONE PER LA RICERCA DEGLI INDIRIZZI
+
+function searchAddress(address) {
+  $.ajax({
+    url: 'https://api.tomtom.com/search/2/geocode/' + address + '.json?limit=1&countrySet=IT&key=T5RJjkTNh0XzCCh2P0vgAYziedXCFFWF',
+    method: 'GET',
+    success: function success(data, state) {
+      var thisAddress = data.results;
+
+      for (var i = 0; i < thisAddress.length; i++) {
+        var completeAddress = '<li class="name">' + thisAddress[i].address.freeformAddress + '</li>';
+        $('#address-list').html('');
+        $('#address-list').append(completeAddress);
+      }
+    },
+    error: function error(richiesta, stato, errori) {
+      alert("E' avvenuto un errore.");
+    }
+  });
+} // FUNZIONE PER L'AGGIUNTA DELL'INDIRIZZO
+
+
+function addCorrectAddress(address) {
+  $.ajax({
+    url: 'https://api.tomtom.com/search/2/geocode/' + address + '.json?limit=1&countrySet=IT&key=T5RJjkTNh0XzCCh2P0vgAYziedXCFFWF',
+    method: 'GET',
+    success: function success(data, state) {
+      var thisAddress = data.results;
+
+      for (var i = 0; i < thisAddress.length; i++) {
+        var correctAddress = thisAddress[i].address.freeformAddress;
+        var latitude = thisAddress[i].position.lat;
+        var longitude = thisAddress[i].position.lon;
+        $('#latitude').val(latitude);
+        $('#longitude').val(longitude);
+        $('#address').val(correctAddress);
+        $('#address-list').html('');
+      }
+    },
+    error: function error(richiesta, stato, errori) {
+      alert("E' avvenuto un errore.");
+    }
+  });
+}
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -37393,8 +37450,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/lucacarnaroli/Desktop/BOOLEAN/boolbnb-team6/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/lucacarnaroli/Desktop/BOOLEAN/boolbnb-team6/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\Lenovo\Desktop\boolean\mamp_public\boolbnb-team6\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Lenovo\Desktop\boolean\mamp_public\boolbnb-team6\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

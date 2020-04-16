@@ -33,7 +33,7 @@ class ApartmentController extends Controller
             'latitude'=> 'required|numeric|between:-90,90',
             'longitude'=> 'required|numeric|between:-180,180',
             'price_for_night' => 'required|numeric',
-            'image_path' => 'image',
+            'image_path' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
             'published' => 'required|boolean'
         ];
     }
@@ -66,6 +66,20 @@ class ApartmentController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validateData = [
+            'title' => 'required|string|max:150',
+            'description' => 'required|string|max:1500',
+            'number_of_rooms' => 'required|numeric',
+            'number_of_bath' => 'required|numeric',
+            'number_of_beds' => 'required|numeric',
+            'meters' => 'required|numeric',
+            'address' => 'required|string|max:255',
+            'latitude' => 'required|numeric|between:-90,90',
+            'longitude' => 'required|numeric|between:-180,180',
+            'price_for_night' => 'required|numeric',
+            'image_path' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'published' => 'required|boolean'
+        ];
         $userId = Auth::user()->id;
         $request->validate($this->validateData);
         $data = $request->all();
