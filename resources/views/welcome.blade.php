@@ -81,20 +81,21 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    BoolBnB
                 </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <div class="form-group city-search">
+                    <input class="form-control" type="text" name="address" id="city" placeholder="insert your city">
+                    <button class="btn btn-warning" id="btn-search" type="submit">Search</button>
+                </div>
+                <div class="form-group">
+                    <input id="latitude" class="form-control" type="text" name="latitude" hidden>
+                </div>
+                <div class="form-group">
+                    <input id="longitude" class="form-control" type="text" name="longitude" hidden>
                 </div>
             </div>
         </div>
+    <script src="{{asset('js/app_search.js')}}"></script>
     </body>
 </html>

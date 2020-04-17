@@ -9,16 +9,30 @@ use Illuminate\Http\Request;
 
 class ApartmentController extends Controller
 {
+  protected $apartments;
+  public function __construct()
+  {
+    return $apartments = $this->apartments;
+  }
   public function getAllApartment()
   {
-    if (Apartment::where('published', '1')->exists()) {
-      $apartments = Apartment::where('published', '1')->get()->toJson(JSON_PRETTY_PRINT);
-      return response($apartments, 200);
-    } else {
-      return response()->json([
-        "message" => "apartments not found"
-      ], 404);
-    }
+    $lat = $_GET['lat'];
+    $lon = $_GET['lon'];
+    $radius = 20000;
+    $apartments = Apartment::selectRaw("id,user_id, title, description,number_of_rooms, number_of_bath,number_of_beds, meters, address,price_for_night, image_path, published, created_at, updated_at, latitude, longitude,
+         ( 6371000 * acos( cos( radians(?) ) *
+           cos( radians( latitude ) )
+           * cos( radians( longitude ) - radians(?)
+           ) + sin( radians(?) ) *
+           sin( radians( latitude ) ) )
+         ) AS distance", [$lat, $lon, $lat])
+      ->having("distance", "<", $radius)
+      ->having("published", '1')
+      ->orderBy("distance", 'asc')
+      ->offset(0)
+      ->limit(20)
+      ->get();
+    return response()->json($apartments);
   }
 
    public function filterApartment(Request $request)
