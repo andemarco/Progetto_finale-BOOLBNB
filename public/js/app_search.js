@@ -42421,6 +42421,13 @@ $(document).ready(function () {
       searchApartments(inputCity);
     }
   });
+  $('#btn-filter').click(function () {
+    var inputAddress = $('#radius').val() * 1000;
+    var inputBath = $('#bath').val();
+    var inputRooms = $('#rooms').val();
+    var inputBeds = $('#beds').val();
+    var inputPrice = $('#price').val();
+  });
 }); //------------------------------FUNCTIONS-------------------------------
 
 function searchApartments(address) {
@@ -42439,14 +42446,28 @@ function searchApartments(address) {
 
       var inputLat = $('#latitude').val();
       var inputLong = $('#longitude').val();
+      var radius = 20000000000;
       $('#latitude').val('');
       $('#longitude').val('');
       $.ajax({
-        'url': 'http://127.0.0.1:8000/api/apartments?lat=' + inputLat + '&lon=' + inputLong,
+        'url': 'http://127.0.0.1:8000/api/apartments?lat=' + inputLat + '&lon=' + inputLong + '&rad=' + radius,
         'method': 'POST',
         'data': data,
         'success': function success(data) {
           console.log(data);
+          var results = data;
+
+          for (var _i = 0; _i < results.length; _i++) {
+            var thisResult = results[_i];
+            var source = $("#entry-template").html();
+            var template = Handlebars.compile(source);
+            var context = {
+              title: thisResult.title,
+              body: thisResult.address
+            };
+            var html = template(context);
+            $('.append-house').append(html);
+          }
         },
         'error': function error() {
           console.log('error');
@@ -42458,6 +42479,8 @@ function searchApartments(address) {
     }
   });
 }
+
+function filterFor(val1, val2, val3, val4, val5) {}
 
 /***/ }),
 

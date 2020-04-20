@@ -9,6 +9,8 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
         <!-- Styles -->
         <style>
             html, body {
@@ -84,17 +86,63 @@
                     BoolBnB
                 </div>
 
-                <div class="form-group city-search">
-                    <input class="form-control" type="text" name="address" id="city" placeholder="insert your city">
-                    <button class="btn btn-warning" id="btn-search" type="submit">Search</button>
-                </div>
+              <div class="form">
+								<div class="form-group city-search">
+									<input class="form-control" type="text" name="address" id="city" placeholder="insert your city">
+									<button class="btn btn-warning" id="btn-search" type="submit">Search</button>
+								</div>
                 <div class="form-group">
                     <input id="latitude" class="form-control" type="text" name="latitude" hidden>
                 </div>
                 <div class="form-group">
                     <input id="longitude" class="form-control" type="text" name="longitude" hidden>
                 </div>
+							</div>
+								<div class="append-house">
+
+                </div>
+
+               <div class="form">
+									<div class="form-group">
+									<label for="radius">distanza in km</label>
+									<input type="number" name="radius" id="radius">
+									{{-- <input type="range" name="radius" id="radius" min="20" max="1000"> --}}
+									{{-- <input type="range" name="radius" id="radius" value="24" min="20" max="1000" onchange="getvalor(this.value);" oninput="radius.value = radius.value">     <input type="text" name="ageOutputName" id="ageOutputId">  --}}
+								</div>
+
+                <div class="form-group">
+										<label for="number_of_bath">Bagni</label>
+										<input type="number" name="bath" id="bath">
+                </div>
+                <div class="form-group">
+										<label for="number_of_rooms">Stanze</label>
+										<input type="number" name="rooms" id="rooms">
+                </div>
+                <div class="form-group">
+										<label for="number_of_beds">Letti</label>
+										<input type="number" name="beds" id="beds">
+                </div>
+                <div class="form-group">
+										<label for="price_for_night">Prezzo per notte</label>
+										<input type="number" name="price" id="price">
+								</div>
+								
+								<button class="btn btn-warning" id="btn-filter" type="submit">Filter</button>
+               </div>
+
+
             </div>
+
+           
+
+            <script id="entry-template" type="text/x-handlebars-template">
+                <div class="entry">
+                    <h1>@{{title}}</h1>
+                    <div class="body">
+                    @{{body}}
+                    </div>
+                </div>
+            </script>
         </div>
     <script src="{{asset('js/app_search.js')}}"></script>
     </body>
