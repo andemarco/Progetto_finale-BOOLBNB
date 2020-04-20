@@ -12,7 +12,7 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
         <!-- Styles -->
-        <style>
+        {{-- <style>
             html, body {
                 background-color: #fff;
                 color: #636b6f;
@@ -63,7 +63,7 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
-        </style>
+        </style> --}}
     </head>
     <body>
         <div class="flex-center position-ref full-height">
@@ -103,7 +103,7 @@
                 </div>
 
                <div class="form">
-									<div class="form-group">
+                <div class="form-group">
 									<label for="radius">distanza in km</label>
 									<input type="number" name="radius" id="radius">
 									{{-- <input type="range" name="radius" id="radius" min="20" max="1000"> --}}
@@ -111,25 +111,51 @@
 								</div>
 
                 <div class="form-group">
-										<label for="number_of_bath">Bagni</label>
-										<input type="number" name="bath" id="bath">
+                  <label for="number_of_bath">Bagni</label>
+                  <input type="number" name="bath" id="bath">
                 </div>
                 <div class="form-group">
-										<label for="number_of_rooms">Stanze</label>
-										<input type="number" name="rooms" id="rooms">
+                  <label for="number_of_rooms">Stanze</label>
+                  <input type="number" name="rooms" id="rooms">
                 </div>
                 <div class="form-group">
-										<label for="number_of_beds">Letti</label>
-										<input type="number" name="beds" id="beds">
+                  <label for="number_of_beds">Letti</label>
+                  <input type="number" name="beds" id="beds">
                 </div>
                 <div class="form-group">
-										<label for="price_for_night">Prezzo per notte</label>
-										<input type="number" name="price" id="price">
-								</div>
-								
-								<button class="btn btn-warning" id="btn-filter" type="submit">Filter</button>
+                  <label for="price_for_night">Prezzo per notte</label>
+                  <input type="number" name="price" id="price">
+                </div>
+                
+                <button class="btn btn-warning" id="btn-filter" type="submit">Filter</button>
                </div>
 
+               <div class="input-group mb-3">
+                  <div class="input-group-text">
+                    <label for="aut">aut</label>
+                    <input type="checkbox" name="services[]" value="1" aria-label="Checkbox for following text input">
+                  </div>
+                  <div class="input-group-text">
+                    <label for="id">id</label>
+                    <input type="checkbox" name="services[]" value="2" aria-label="Checkbox for following text input">
+                  </div>
+                  <div class="input-group-text">
+                    <label for="itaque">itaque</label>
+                    <input type="checkbox" name="services[]" value="3" aria-label="Checkbox for following text input">
+                  </div>
+                  <div class="input-group-text">
+                    <label for="nihil">nihil</label>
+                    <input type="checkbox" name="services[]" value="4" aria-label="Checkbox for following text input">
+                  </div>
+                  <div class="input-group-text">
+                    <label for="qui">qui</label>
+                    <input type="checkbox" name="services[]" value="5" aria-label="Checkbox for following text input">
+                  </div>
+                  <div class="input-group-text">
+                    <label for="vero">vero</label>
+                    <input type="checkbox" name="services[]" value="6" aria-label="Checkbox for following text input">
+                  </div>
+              </div>
 
             </div>
 
