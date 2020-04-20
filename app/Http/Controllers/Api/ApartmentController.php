@@ -10,7 +10,6 @@ use Illuminate\Http\Request;
 class ApartmentController extends Controller
 {
   protected $apartments;
-  public $apartmentsFiltered;
   public function __construct()
   {
     return $apartments = $this->apartments;
@@ -40,26 +39,11 @@ class ApartmentController extends Controller
 
    public function filterApartment(Request $request)
    {
-    $lat = $_GET['lat'];
-    $lon = $_GET['lon'];
-    $radius = $_GET['rad'];
-    $apartments = Apartment::selectRaw("id, user_id, title, description,number_of_rooms, number_of_bath,number_of_beds, meters, address,price_for_night, image_path, published, created_at, updated_at, latitude, longitude,
-         ( 6371000 * acos( cos( radians(?) ) *
-           cos( radians( latitude ) )
-           * cos( radians( longitude ) - radians(?)
-           ) + sin( radians(?) ) *
-           sin( radians( latitude ) ) )
-         ) AS distance", [$lat, $lon, $lat])
-      ->having("distance", "<", $radius)
-      ->having("published", '1')
-      ->orderBy("distance", 'asc')
-      ->offset(0)
-      ->limit(20)
-      ->get();
+     $apartments = Apartment::all();
 
      $typeRequest = [
-      'number_of_rooms',
       'number_of_bath',
+      'number_of_rooms',
       'number_of_beds',
       'price_for_night'
      ];
@@ -70,9 +54,12 @@ class ApartmentController extends Controller
        if (!in_array($key, $typeRequest)) {
          unset($data[$key]);
        }
+       
      }
 
+     
      foreach ($data as $key => $value) {
+       dd($key);
        if (array_key_first($data) == $key) {
         return $apartmentsFiltered = $this->filterFor($key, $value, $apartments);
        } else {
@@ -80,6 +67,7 @@ class ApartmentController extends Controller
        }
      }
      return response()->json($apartmentsFiltered);
+
    }
 
    private function filterFor($type, $value, $array) 
