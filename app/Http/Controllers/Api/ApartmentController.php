@@ -5,82 +5,61 @@ namespace App\Http\Controllers\Api;
 use App\Apartment;
 use App\Service;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class ApartmentController extends Controller
 {
-  protected $apartments;
-  public function __construct()
-  {
-    return $apartments = $this->apartments;
-  }
   public function getAllApartment(Request $request)
   {
-    $lat = $_GET['lat'];
-    $lon = $_GET['lon'];
-    $radius = $_GET['rad'];
-    $apartments = Apartment::selectRaw("id,user_id, title, description,number_of_rooms, number_of_bath,number_of_beds, meters, address,price_for_night, image_path, published, created_at, updated_at, latitude, longitude,
+    $apartment = Apartment::query();
+    $apartments = new Apartment;
+    $radius = (int) $request['radius'] ?: 20;
+    if ($request->has('lat') && $request['lat'] !== 'null' && $request->has('long') && $request['long'] !== 'null') {
+      $lat = $request['lat'];
+      $lon = $request['long'];
+      $radius = $request['rad'];
+      $apartments =  $apartment->selectRaw("id,user_id, title, description,number_of_rooms, number_of_bath,number_of_beds, meters, address,price_for_night, image_path, published, created_at, updated_at, latitude, longitude,
          ( 6371000 * acos( cos( radians(?) ) *
            cos( radians( latitude ) )
            * cos( radians( longitude ) - radians(?)
            ) + sin( radians(?) ) *
            sin( radians( latitude ) ) )
          ) AS distance", [$lat, $lon, $lat])
-      ->having("distance", "<", $radius)
-      ->having("published", '1')
-      ->orderBy("distance", 'asc')
-      ->offset(0)
-      ->limit(20)
-      ->get();
-    $typeRequest = [
-      'number_of_bath',
-      'number_of_rooms',
-      'number_of_beds',
-      'meters',
-      'price_for_night',
-    ];
-    $data = $request->all();
-    // if ($data->has('services')) {
-    //   $services = $data['services'];
-    //   $apartamentsFiltered = Apartment::whereHas('services', function ($check) use ($services) {
-    //     $check->whereIn('services . id', $services);
-    //   },  count($services))->get();
-    $apartmentsFiltered = [];
-
-    
-    foreach ($data as $key => $value) {
-      if (!in_array($key, $typeRequest)) {
-        unset($data[$key]);
+        ->having("distance", "<", $radius)
+        ->having("published", '1')
+        ->orderBy("distance", 'asc')
+        ->offset(0)
+        ->limit(20);
+    }
+    // filtering by room number
+    if ($request->has('rooms') && $request['rooms'] !== 'null') {
+      $apartments = $apartment->where('number_of_rooms', '=', $request['rooms']);
+    }
+    // filtering by beds number
+    if ($request->has('beds') && $request['beds'] !== 'null') {
+      $apartments = $apartment->where('number_of_beds', '=', $request['beds']);
+    }
+    // filtering by bath number
+    if ($request->has('bath') && $request['bath'] !== 'null') {
+      $apartments = $apartment->where('number_of_bath', '=', $request['bath']);
+    }
+    // filtering by price
+    if ($request->has('price') && $request['price'] !== 'null') {
+      $apartments = $apartment->where('price_for_night', '<=', $request['price']);
+    }
+    // filter by services
+    if (!empty($request['services'])) {
+      foreach ($request['services'] as $service) {
+        $apartments = $apartment->whereHas('services', function ($query) use ($service) {
+          $query->where('id', $service);
+        });
       }
     }
-
-
-    if (!empty($data)) {
-      foreach ($data as $key => $value) {
-        //se siamo al primo giro uso students
-        if (array_key_first($data) == $key) {
-          $apartmentsFiltered = $this->filterFor($key, $value, $apartments);
-        }
-        //in tutti gli altri casi uso studentsFiltered
-        else {
-          $apartmentsFiltered = $this->filterFor($key, $value, $apartmentsFiltered);
-        }
-      }
-      return response()->json($apartmentsFiltered);
-    } else {
-      return response()->json($apartments);
-    }
-  }
-
-  
-  private function filterFor($type, $value, $array)
-  {
-    $filtered = [];
-    foreach ($array as $element) {
-      if ($element[$type] == $value) {
-        $filtered[] = $element;
-      }
-    }
-    return $filtered;
+    $apartmentsFiltered = $apartments->get();
+    return response()->json($apartmentsFiltered);
   }
 }

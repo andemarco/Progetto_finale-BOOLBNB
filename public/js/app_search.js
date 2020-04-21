@@ -42427,6 +42427,22 @@ $(document).ready(function () {
     var inputRooms = $('#rooms').val();
     var inputBeds = $('#beds').val();
     var inputPrice = $('#price').val();
+    var inputLat = $('#latitude').val();
+    var inputLong = $('#longitude').val();
+    var checkboxArray = $("input[type=checkbox]:checked.service_check").map(function () {
+      return $(this).val();
+    }).get();
+    var data = {
+      lat: inputLat,
+      "long": inputLong,
+      rad: inputAddress,
+      rooms: inputRooms,
+      bath: inputBath,
+      beds: inputBeds,
+      price: inputPrice,
+      services: checkboxArray
+    };
+    filterFor(data);
   });
 }); //------------------------------FUNCTIONS-------------------------------
 
@@ -42446,9 +42462,9 @@ function searchApartments(address) {
 
       var inputLat = $('#latitude').val();
       var inputLong = $('#longitude').val();
-      var radius = 20000000000;
-      $('#latitude').val('');
-      $('#longitude').val('');
+      var radius = 20000000000; // $('#latitude').val('');
+      // $('#longitude').val('');
+
       $.ajax({
         'url': 'http://127.0.0.1:8000/api/apartments?lat=' + inputLat + '&lon=' + inputLong + '&rad=' + radius,
         'method': 'POST',
@@ -42480,7 +42496,30 @@ function searchApartments(address) {
   });
 }
 
-function filterFor(val1, val2, val3, val4, val5) {}
+function filterFor(data) {
+  $.ajax({
+    'url': 'http://127.0.0.1:8000/api/apartments',
+    'method': 'POST',
+    'data': data,
+    'success': function success(data) {
+      console.log(data); // var results = data;
+      // for (let i = 0; i < results.length; i++) {
+      //     var thisResult = results[i];
+      //     var source = $("#entry-template").html();
+      //     var template = Handlebars.compile(source);
+      //     var context = {
+      //         title: thisResult.title,
+      //         body: thisResult.address
+      //     };
+      //     var html = template(context);
+      //     $('.append-house').append(html);
+      // }
+    },
+    'error': function error() {
+      console.log('error');
+    }
+  });
+}
 
 /***/ }),
 

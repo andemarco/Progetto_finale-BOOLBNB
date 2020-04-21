@@ -21,4 +21,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::namespace('Api')->group(function () {
     Route::post('/apartments', 'ApartmentController@getAllApartment');
     Route::post('/apartments/filter', 'ApartmentController@filterApartment');
+    Route::post('/apartments/filterCheckbox', 'ApartmentController@filterFromCheckbox');
 });
