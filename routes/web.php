@@ -17,14 +17,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
 //rotta per tutti i risultati della ricerca
 Route::get('/search', 'SearchController@index')->name('index');
 
 Auth::routes();
-
-
-
 Route::name('host.')->namespace('Host')->middleware('auth')->group(function(){
-    Route::get('/home', 'HomeController@index')->name('home');
     Route::resource('apartments', 'ApartmentController');
 });

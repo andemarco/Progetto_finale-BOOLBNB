@@ -18,6 +18,6 @@ class HomeController extends Controller
   }
   public function index()
   {
-    return view('host.apartments.index');
+    return view('index');
   }
 }
