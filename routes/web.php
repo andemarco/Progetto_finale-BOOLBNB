@@ -12,10 +12,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//rotta per la landing page
 Route::get('/', function () {
     return view('welcome');
 });
+
+//rotta per tutti i risultati della ricerca
+Route::get('/search', 'SearchController@index')->name('index');
 
 Auth::routes();
 

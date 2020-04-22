@@ -6,10 +6,12 @@ const Handlebars = require("handlebars");
 $(document).ready(function () {
   $('#btn-search').click(function() {
     var inputCity = $('#city').val();
+    $('.append-house').html('');
     if (inputCity == '') {
       alert('Nessun pippo inserito');
     } else {
       searchApartments(inputCity);
+      $( "#result" ).load( "views/welcome.blade.php", {"#form-copy"} );
     }
   });
   $('#btn-filter').click(function() {
@@ -63,17 +65,18 @@ function searchApartments(address) {
       for (var i = 0; i < thisAddress.length; i++) {
           var latitude = thisAddress[i].position.lat;
           var longitude = thisAddress[i].position.lon;
+          $('#latitude').val('');
+          $('#longitude').val('');
           $('#latitude').val(latitude);
           $('#longitude').val(longitude);
           
       }
       var inputLat = $('#latitude').val();
       var inputLong = $('#longitude').val();
-      var radius = 20000000000;
-      // $('#latitude').val('');
-      // $('#longitude').val('');
+      var radius = 20000;
+      
         $.ajax({
-            'url': 'http://127.0.0.1:8000/api/apartments?lat=' + inputLat + '&lon=' + inputLong + '&rad=' + radius,
+            'url': 'http://127.0.0.1:8000/api/apartments?lat=' + inputLat + '&long=' + inputLong + '&rad=' + radius,
             'method': 'POST',
             'data': data,
             'success': function (data) {
@@ -81,7 +84,7 @@ function searchApartments(address) {
                 console.log(data);
                 var results = data;
 
-                for (let i = 0; i < results.length; i++) {
+                for (var i = 0; i < results.length; i++) {
                   var thisResult = results[i];
                   
                   var source = $("#entry-template").html();
@@ -92,10 +95,11 @@ function searchApartments(address) {
                   };
                   var html = template(context);
                   
+                  
+                  
                   $('.append-house').append(html);
                   
                 }
-
             },
             'error': function () {
                 console.log('error');
