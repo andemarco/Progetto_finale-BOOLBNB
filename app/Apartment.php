@@ -29,7 +29,7 @@ class Apartment extends Model
 
     public function services()
     {
-        return $this->belongsToMany('App\Service')->withPivot('name');
+        return $this->belongsToMany('App\Service');
     }
 
     public function messages()

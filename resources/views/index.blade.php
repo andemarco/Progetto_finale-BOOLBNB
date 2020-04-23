@@ -69,7 +69,7 @@
   <script id="entry-template" type="text/x-handlebars-template">
       <div class="entry">
         <div class="card">
-          <h1><a href="#">@{{title}}</a></h1>
+          <h1><a href="http://127.0.0.1:8000/search/show/@{{id}}">@{{title}}</a></h1>
           <div class="body">
             <p>Numero di camere:@{{number_of_rooms}}</p>
             <p>Numero di bagni: @{{number_of_bath}}</p>

@@ -117,6 +117,7 @@ function searchApartments(address) {
                       number_of_beds: thisResult.number_of_beds,
                       price_for_night: thisResult.price_for_night,
                       image_path: thisResult.image_path,
+                      id: thisResult.id,
 
                   };
                   var html = template(context);

@@ -20,4 +20,15 @@ class SearchController extends Controller
     return view('index', compact('services'));
 
     }
+    public function show($id)
+    {
+      $services = Service::all();
+      $apartment = Apartment::find($id);
+
+      if(empty($apartment)) {
+          abort('404');
+      }
+      return view ('show', compact('apartment'));
+
+    }
 }
