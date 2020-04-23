@@ -129,7 +129,11 @@ class ApartmentController extends Controller
      */
     public function show($id)
     {
+
         $apartment = Apartment::find($id);
+        if ($apartment->user_id != Auth::user()->id) {
+            abort('403', 'stronzo non puoi entrare');
+        }
 
         if(empty($apartment)) {
             abort('404');
@@ -147,6 +151,9 @@ class ApartmentController extends Controller
     {
         $services = Service::all();
         $apartment = Apartment::find($id);
+        if ($apartment->user_id != Auth::user()->id) {
+            abort('403', 'stronzo non puoi entrare');
+        }
 
         $data = [
             'services'=> $services,
