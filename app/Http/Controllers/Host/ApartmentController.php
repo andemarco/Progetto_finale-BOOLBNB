@@ -228,4 +228,13 @@ class ApartmentController extends Controller
 
         return redirect()->route('host.apartments.index')->with('delete', $apartment);
     }
+
+    public function chart()
+    {
+        $result = \DB::table('apartments')
+            ->where('user_id', Auth::id())
+            ->get();
+        
+        return response()->json($result);
+    }
 }

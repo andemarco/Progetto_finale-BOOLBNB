@@ -23,7 +23,7 @@ class MessageController extends Controller
     public function writeMessage(Request $request)
     {
 
-        // $apartmentId = Apartment::find($id);
+        
         $request->validate($this->validateRequest);
         $data = $request->all();
 

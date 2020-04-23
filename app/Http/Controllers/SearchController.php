@@ -24,6 +24,7 @@ class SearchController extends Controller
     {
       $services = Service::all();
       $apartment = Apartment::find($id);
+      $apartment->increment('views');
 
       if(empty($apartment)) {
           abort('404');

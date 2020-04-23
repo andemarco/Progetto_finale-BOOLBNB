@@ -1,5 +1,38 @@
 require('./bootstrap');
 var $ = require( "jquery" );
+var Chart = require('chart.js');
+var url = 'http://127.0.0.1:8000/apartments/chart';
+        var Views = new Array();
+        var Title = new Array();
+        $(document).ready(function(){
+          $.get(url, function(response){
+            response.forEach(function(data){
+              Views.push(data.views);
+              Title.push(data.title);
+            });
+            var ctx = document.getElementById("canvas").getContext('2d');
+                var myChart = new Chart(ctx, {
+                  type: 'bar',
+                  data: {
+                      labels:Title,
+                      datasets: [{
+                          label: 'Visite',
+                          data: Views,
+                          borderWidth: 1
+                      }]
+                  },
+                  options: {
+                      scales: {
+                          yAxes: [{
+                              ticks: {
+                                  beginAtZero:true
+                              }
+                          }]
+                      }
+                  }
+              });
+          });
+        });
 
 
 

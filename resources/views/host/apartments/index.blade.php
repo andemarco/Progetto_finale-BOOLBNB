@@ -58,5 +58,7 @@
         </tbody>
       </table>
     </div>
+    <canvas id="canvas" width="20" height="20"></canvas>
 </div>
+<script src="{{asset('js/app.js')}}"></script>
 @endsection
