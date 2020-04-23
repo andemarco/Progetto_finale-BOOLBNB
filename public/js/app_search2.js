@@ -42548,7 +42548,8 @@ function filterFor(data) {
           number_of_bath: thisResult.number_of_bath,
           number_of_beds: thisResult.number_of_beds,
           price_for_night: thisResult.price_for_night,
-          image_path: thisResult.image_path
+          image_path: thisResult.image_path,
+          id: thisResult.id
         };
         var html = template(context);
         $('.append-house').append(html);
@@ -42614,7 +42615,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/andreademarco/Desktop/BOOLEAN/boolbnb-team6/resources/js/app_search2.js */"./resources/js/app_search2.js");
+module.exports = __webpack_require__(/*! C:\Users\Lenovo\Desktop\boolean\mamp_public\boolbnb-team6\resources\js\app_search2.js */"./resources/js/app_search2.js");
 
 
 /***/ })

@@ -38,4 +38,14 @@
         </tr>        
       </tbody>
     </table>
+    @forelse ($apartment->messages as $message)
+        <div class="card mb-5" style="width: 18rem;">
+          <div class="card-body">
+            <h3 class="card-title">{{$message->title}}</h3>
+            <p class="card-text">{{$message->body}}</p>
+          </div>
+        </div>
+    @empty
+        <p>No Messages</p>
+    @endforelse
 @endsection

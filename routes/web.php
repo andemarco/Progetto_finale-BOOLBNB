@@ -22,6 +22,7 @@ Route::get('/', function () {
 //rotta per tutti i risultati della ricerca
 Route::get('/search', 'SearchController@index')->name('index');
 Route::get('/search/show/{slug}', 'SearchController@show')->name('show');
+Route::post('/message/create', 'MessageController@writeMessage')->name('message.writeMessage');
 
 Auth::routes();
 Route::name('host.')->namespace('Host')->middleware('auth')->group(function(){
