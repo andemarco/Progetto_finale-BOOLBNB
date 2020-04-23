@@ -112,8 +112,9 @@ class ApartmentController extends Controller
             return redirect()->back();
         }
 
-        $services = $data['services'];
-        if (!empty($services)) {
+       
+        if (!empty($data['services'])) {
+            $services = $data['services'];
             $newApartment->services()->attach($services);
         }
         
