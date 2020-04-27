@@ -112,12 +112,11 @@ class ApartmentController extends Controller
             return redirect()->back();
         }
 
-       
         if (!empty($data['services'])) {
             $services = $data['services'];
             $newApartment->services()->attach($services);
-        }
-        
+            }
+
         return redirect()->route('host.apartments.index');
 
     }

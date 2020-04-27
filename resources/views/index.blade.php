@@ -7,8 +7,9 @@
       <div class="form-group city-search">
         <input class="form-control" type="text" name="address" id="city" placeholder="insert your city" city-data="">
         {{-- <button class="btn btn-warning" type="submit" id="btn-search">invia</button> --}}
-      <a class="btn btn-warning" id="btn-search">Search</a>
+      {{-- <a class="btn btn-warning" id="btn-search">Search</a> --}}
       </div>
+      <a class="btn btn-warning" id="btn-search"><i class="fas fa-search"></i></a>
       <div class="form-group">
           <input id="latitude" class="form-control" type="text" name="latitude"  hidden>
       </div>
