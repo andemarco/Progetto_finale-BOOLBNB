@@ -10883,7 +10883,7 @@ a.text-dark:focus {
 }
 
 #btn-search:hover {
-  color: #cf01b7;
+  color: lightgray;
 }
 
 .form-control:focus {
@@ -10891,15 +10891,39 @@ a.text-dark:focus {
   border-color: lightgray;
 }
 
+.carousel-control-next,
+.carousel-control-prev {
+  position: static;
+  width: 50px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
 body {
   background-color: white;
-  width: 90%;
+  width: 100vw;
+  height: 100vh;
   margin: auto;
+  overflow-x: hidden;
 }
 
 .navbar {
-  width: 90%;
+  width: 100%;
   position: fixed;
+  display: flex;
+}
+
+.navbar .container {
+  width: 100%;
+}
+
+.jumbo {
+  height: 600px;
+  width: 100%;
+  margin-top: 44px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .apt-container {
@@ -10910,7 +10934,14 @@ body {
 .content {
   width: 50%;
   margin: auto;
-  padding: 10px;
+}
+
+#form-copy {
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 #btn-search {
@@ -10919,31 +10950,44 @@ body {
   border: 1px solid lightgray;
   border-left: 0;
   border-radius: 0;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-  height: 40px;
-  line-height: 30px;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  height: 50px;
+  line-height: 40px;
 }
 
 .fa-search {
   font-size: 18px;
 }
 
+.fa-angle-left,
+.fa-angle-right {
+  font-size: 50px;
+  color: black;
+}
+
 .city-search {
+  width: 100%;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  margin-top: 66px;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.container-title h1 {
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
 }
 
 .form-control {
-  width: 350px;
-  height: 40px;
+  width: 70%;
+  height: 50px;
   border: 1px solid lightgray;
   border-right: 0;
   border-radius: 0;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
   font-size: 18px;
 }
 
@@ -10951,38 +10995,114 @@ body {
   display: flex;
   justify-content: center;
   flex-direction: row;
+  align-items: center;
+  padding-left: 15px;
 }
 
-.box-container .single-apt {
+.box-container .carousel {
+  width: 100%;
+}
+
+.box-container .slide-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.box-container .slide-box .single-apt {
   display: flex;
   flex-direction: column;
-  height: 400px;
-  width: 400px;
-  background-color: darkred;
-  margin: 15px;
+  height: 330px;
+  width: 240px;
+  background-color: #404040;
+  margin: 10px;
   border-radius: 20px;
 }
 
-.box-container .single-apt .house-image {
-  border-top-right-radius: 20px;
-  border-top-left-radius: 20px;
+.box-container .slide-box .single-apt h5,
+.box-container .slide-box .single-apt p {
+  color: white;
 }
 
-.box-container #apt1,
-.box-container #apt4 {
+.box-container .slide-box .single-apt .house-image {
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  height: 230px;
+  width: 240px;
+}
+
+.box-container #apt1 {
   box-shadow: 5px 5px 17px -8px black;
   box-shadow: 5px 5px 17px -8px black;
 }
 
 .box-container #apt2,
-.box-container #apt5 {
+.box-container #apt3 {
   box-shadow: 0px 5px 17px -8px black;
   box-shadow: 0px 5px 17px -8px black;
 }
 
-.box-container #apt3,
-.box-container #apt6 {
+.box-container #apt4 {
   box-shadow: -5px 5px 17px -8px black;
   box-shadow: -5px 5px 17px -8px black;
+}
+
+#announce {
+  width: 100%;
+  height: 600px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#announce .container-announce {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  height: 600px;
+}
+
+#announce .container-announce .announce-title h2 {
+  color: black;
+}
+
+#announce .container-announce .button-announce {
+  width: 20%;
+  height: 50px;
+  border-radius: 25px;
+  line-height: 35px;
+  font-size: 20px;
+  color: lightgray;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: none;
+}
+
+@media (max-width: 576px) {
+  .single-apt {
+    height: 300px;
+    width: 220px;
+    background-color: #404040;
+    margin: 5px;
+    border-radius: 20px;
+  }
+
+  .single-apt h5,
+  .single-apt p {
+    color: white;
+  }
+
+  .single-apt .house-image {
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    height: 200px;
+    width: 220px;
+  }
+}
+
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 0.5rem;
 }
 

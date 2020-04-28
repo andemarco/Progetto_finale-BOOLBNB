@@ -11,7 +11,7 @@
 
 //Hover
 #btn-search:hover {
-    color: #cf01b7;
+    color: lightgray;
 }
 
 .form-control:focus {
@@ -19,18 +19,39 @@
     border-color: lightgray;
 }
 
+.carousel-control-next,
+.carousel-control-prev {
+    position: static;
+    width: 50px;
+    margin-left: 5px;
+    margin-right: 5px;  
+}
 //CONTENT
 body{
     background-color: white;
-    width: 90%;
+    width: 100vw;
+    height: 100vh;
     margin: auto;
+    overflow-x: hidden;
 }
 
 .navbar {
-    width: 90%;
+    width: 100%;
     position: fixed;
+    display: flex;
+    .container {
+        width: 100%;
+    }
 }
 
+.jumbo {
+    height: 600px;
+    width: 100%;
+    margin-top: 44px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 .apt-container {
     background-color:white;
     margin: auto;
@@ -39,7 +60,14 @@ body{
 .content {
     width: 50%;
     margin: auto;
-    padding: 10px;
+}
+
+#form-copy {
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 #btn-search {
@@ -48,65 +76,176 @@ body{
     border: 1px solid lightgray;
     border-left: 0;
     border-radius: 0;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    height: 40px;
-    line-height: 30px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    height: 50px;
+    line-height: 40px;
 }
+
 
 .fa-search {
     font-size: 18px;
 }
 
+.fa-angle-left, .fa-angle-right {
+    font-size: 50px;
+    color:black;
+}
+
 .city-search {
+    width: 100%;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    margin-top: 66px;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.container-title {
+    h1 {
+        font-size: 50px;
+        font-weight: bold;
+        text-align: center;
+    }    
 }
 
 .form-control {
-    width: 350px;
-    height: 40px;
+    width: 70%;
+    height: 50px;
     border: 1px solid lightgray;
     border-right: 0;
     border-radius: 0;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    font-size: 18px;    
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    font-size: 18px;   
 }
 
 .box-container {
     display: flex;
     justify-content: center;
     flex-direction: row;
-    .single-apt {
+    align-items: center;
+    padding-left: 15px;
+    .carousel {
+        width: 100%;
+      }
+    .slide-box {
+        display: flex;
+        justify-content: space-between;
+        .single-apt {
+            display: flex;
+            flex-direction: column;
+            height: 330px;
+            width: 240px;
+            background-color: rgba(64, 64, 64, 1);
+            margin: 10px;
+            border-radius: 20px;
+            h5, p {
+                color: white;
+            }
+            .house-image {
+                border-top-right-radius: 20px;
+                border-top-left-radius: 20px;
+                height: 230px;
+                width: 240px;
+            }
+        }   
+    }
+    #apt1 {
+        box-shadow: 5px 5px 17px -8px rgba(0,0,0,1); -moz-box-shadow: 5px 5px 17px -8px rgba(0,0,0,1); box-shadow: 5px 5px 17px -8px rgba(0,0,0,1);
+    }
+    #apt2, #apt3 {
+        box-shadow: 0px 5px 17px -8px rgba(0,0,0,1); -moz-box-shadow: 0px 5px 17px -8px rgba(0,0,0,1); box-shadow: 0px 5px 17px -8px rgba(0,0,0,1);
+    }
+    #apt4 {
+        box-shadow: -5px 5px 17px -8px rgba(0,0,0,1); -moz-box-shadow: -5px 5px 17px -8px rgba(0,0,0,1); box-shadow: -5px 5px 17px -8px rgba(0,0,0,1);
+    }
+}
+
+#announce {
+    width: 100%;
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    .container-announce {
         display: flex;
         flex-direction: column;
-        height: 400px;
-        width: 400px;
-        background-color: darkred;
-        margin: 15px;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        height: 600px;
+        .announce-title {
+            h2 {
+                color: black;
+            }
+        }
+        .button-announce {
+            width: 20%;
+            height: 50px;
+            border-radius: 25px;
+            line-height: 35px;
+            font-size: 20px;
+            color: lightgray;
+            background-color: rgba(0, 0, 0, 0.6);;
+            border: none;
+        }
+    }
+}
+
+//PROVA
+
+@media (max-width: 576px){
+    .single-apt {
+        height: 300px;
+        width: 220px;
+        background-color: rgba(64, 64, 64, 1);
+        margin: 5px;
         border-radius: 20px;
-        
+        h5, p {
+            color: white;
+        }
         .house-image {
             border-top-right-radius: 20px;
             border-top-left-radius: 20px;
+            height: 200px;
+            width: 220px;
         }
-    }
-    #apt1, #apt4 {
-        box-shadow: 5px 5px 17px -8px rgba(0,0,0,1); -moz-box-shadow: 5px 5px 17px -8px rgba(0,0,0,1); box-shadow: 5px 5px 17px -8px rgba(0,0,0,1);
-    }
-    #apt2, #apt5 {
-        box-shadow: 0px 5px 17px -8px rgba(0,0,0,1); -moz-box-shadow: 0px 5px 17px -8px rgba(0,0,0,1); box-shadow: 0px 5px 17px -8px rgba(0,0,0,1);
-    }
-    #apt3, #apt6 {
-        box-shadow: -5px 5px 17px -8px rgba(0,0,0,1); -moz-box-shadow: -5px 5px 17px -8px rgba(0,0,0,1); box-shadow: -5px 5px 17px -8px rgba(0,0,0,1);
-    }
-    
+    }   
 }
-
-
-
+  
+  
+  
+//   @media (min-width: 576px) and (max-width: 767.98px) {
+//     .slide-box img {
+//       -ms-flex: 0 0 50%;
+//       flex: 0 0 50%;
+//       max-width: 50%;
+//     }
+//   }
+  
+//   @media (min-width: 768px) and (max-width: 991.98px) {
+//     .slide-box img {
+//       -ms-flex: 0 0 33.3333%;
+//       flex: 0 0 33.3333%;
+//       max-width: 33.3333%;
+//     }
+//   }
+  
+//   @media (min-width: 992px)
+//   {
+//     .slide-box img {
+//       -ms-flex: 0 0 25%;
+//       flex: 0 0 25%;
+//       max-width: 25%;
+//     }
+//   }
+  
+  .carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: .5rem;
+  }
+ 
+  
 
 
