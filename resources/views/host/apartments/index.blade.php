@@ -25,7 +25,7 @@
             <th>Price</th>
             <th>Image</th>
             <th>Published</th>
-            <th colspan="13"></th>
+            <th colspan="14"></th>
           </tr>
         </thead>
         <tbody>
@@ -42,10 +42,11 @@
             <td>{{$apartment->latitude}}</td>
             <td>{{$apartment->longitude}}</td>
             <td>{{$apartment->price_for_night}}</td>
-            <td>{{$apartment->image_path}}</td>
+            {{-- <td>{{$apartment->image_path}}</td> --}}
             <td>{{$apartment->published}}</td>
             <td><a class="btn btn-primary" href="{{route('host.apartments.show', $apartment->id)}}">View</a> </td>
             <td><a class="btn btn-primary" href="{{route('host.apartments.edit', $apartment->id)}}">Edit</a> </td>
+            <td><a class="btn btn-primary" href="{{route('host.apartments.sponsor', $apartment->id)}}">Sponsorizza</a> </td>
             <td>
             <form action="{{route('host.apartments.destroy', $apartment)}}" method="post">
                 @csrf

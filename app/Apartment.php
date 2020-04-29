@@ -36,6 +36,10 @@ class Apartment extends Model
     {
       return $this->hasMany('App\Message');
     }
+    public function orders()
+    {
+      return $this->hasMany('App\Order');
+    }
 
     public function sponsors()
     {

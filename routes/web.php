@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,20 +12,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //rotta per la landing page
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
-
+Route::get('/', 'SearchController@home')->name('welcome');
 //rotta per tutti i risultati della ricerca
 Route::get('/search', 'SearchController@index')->name('index');
 Route::get('/search/show/{slug}', 'SearchController@show')->name('show');
-Route::post('/message/create', 'MessageController@writeMessage')->name('message.writeMessage');
-
+//rotta per le statistiche
 Route::get('apartments/chart', 'Host\ApartmentController@chart')->name('chart');
-
+//rotta per le pagine dell'host
 Auth::routes();
-Route::name('host.')->namespace('Host')->middleware('auth')->group(function(){
+Route::name('host.')->namespace('Host')->middleware('auth')->group(function () {
     Route::resource('apartments', 'ApartmentController');
+    Route::get('apartments/{id}/sponsor', 'ApartmentController@sponsor')->name('apartments.sponsor');
+    Route::post('apartments/sponsor/{id}', 'ApartmentController@sponsorstore')->name('apartments.sponsorstore');
 });
