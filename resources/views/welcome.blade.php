@@ -1,8 +1,6 @@
 @extends('layouts.app')
 @section('content')
 
-
-
 <div class="jumbo" style="background-image: url('storage/images/ImmagineBack.jpg');">
   <section id='city-search'>
     <div class="content">
@@ -295,7 +293,7 @@
     <div class="announce-title">
       <h2>Pubblica il tuo annuncio ed entra a far parte del mondo BoolBnb</h2>
     </div>
-    <div class="btn btn-info button-announce">Pubblica!
+    <div class="btn button-announce">Pubblica!
     </div>
   </div>
 </section>

@@ -31,6 +31,7 @@ class ApartmentsTableSeeder extends Seeder
             $newApartment->price_for_night = rand(50, 100);
             $newApartment->image_path = 'https://picsum.photos/id/'.rand(1,100).'/300/200';
             $newApartment->published = $faker->boolean;
+            $newApartment->views = 0;
             $newApartment->save();
         }
     }
