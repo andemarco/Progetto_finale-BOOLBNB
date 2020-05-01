@@ -4,7 +4,7 @@
 <div class="jumbo" style="background-image: url('storage/images/ImmagineBack.jpg');">
   <section id='city-search'>
     <div class="content">
-      <div class="form" id="form-copy">
+      <div class="form" id="form-welcome">
         <div class="container-title">
           <h1>Cerca appartamenti in tutto il Mondo</h1>
         </div>

@@ -1,5 +1,5 @@
-require('./bootstrap');
 var $ = require( "jquery" );
+require('./bootstrap');
 var Chart = require('chart.js');
 var url = 'http://127.0.0.1:8000/apartments/chart';
         var Views = new Array();
@@ -11,6 +11,8 @@ var url = 'http://127.0.0.1:8000/apartments/chart';
               Title.push(data.title);
             });
             var ctx = document.getElementById("canvas").getContext('2d');
+            ctx.canvas.width = 1137;
+            ctx.canvas.height = 528;
                 var myChart = new Chart(ctx, {
                   type: 'bar',
                   data: {
@@ -18,7 +20,8 @@ var url = 'http://127.0.0.1:8000/apartments/chart';
                       datasets: [{
                           label: 'Visite',
                           data: Views,
-                          borderWidth: 1
+                          borderWidth: 1,
+                          backgroundColor: ["#34558b", "#d13b40 ", "#ffaf12 ", "#eaac9d", "#4ec5a5", "#565d47", "#798fa8", "#fd823e", "#117893 ", "#f0daa4", "#eaac9d", "#a2553a", "#72617d", "#b49c73 ", "#3b3d4b"]
                       }]
                   },
                   options: {
@@ -33,9 +36,6 @@ var url = 'http://127.0.0.1:8000/apartments/chart';
               });
           });
         });
-
-
-
 $(document).ready(function() {
   $('.btn-search').on('click', function() {
     var address = $('#address').val();
@@ -46,7 +46,19 @@ $(document).ready(function() {
     addCorrectAddress(inputAddress);
   });
 });
-
+$(document).ready(function() {
+  $('#chart_button').click(function() {
+    $('.chart-container').fadeIn();
+  });
+  $('#close_chart').click(function() {
+    $('.chart-container').fadeOut();
+  });
+  $(document).keyup(function(e) {
+    if (e.key === "Escape") {
+      $('.chart-container').fadeOut();
+    }
+});
+});
 
 
 

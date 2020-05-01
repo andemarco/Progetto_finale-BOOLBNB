@@ -1,65 +1,72 @@
 @extends('layouts.app')
-
 @section('content')
-@if (session('delete'))
-    <div class="alert alert-danger">
-      You deleted the apartment: {{session('delete')->id}}
-    </div>
-@endif
-<div class="container">
-        <a class="btn btn-primary" href="{{route('host.apartments.create')}}">Insert Apartments</a>
+    @if (session('delete'))
+        <div class="alert alert-danger">
+          You deleted the apartment: {{session('delete')->id}}
+        </div>
+    @endif
+  <div class="jumbo" style="background-image: url('https://st3.idealista.it/news/archivie/2019-08/casa_malaga_fachada.jpg?sv=dFqJvXT7');">
+    <section id='city-search'>
+      <div class="content">
+        <div class="form" id="form-copy">
+          <div class="container-title">
+            <h1>Monitora, modifica e sponsorizza i tuoi appartamenti.</h1>
+          </div>
+        </div>
       </div>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Description</th>
-            <th>N. Room</th>
-            <th>N. Beds</th>
-            <th>N. Bath</th>
-            <th>MQ2</th>
-            <th>Adress</th>
-            <th>Lat</th>
-            <th>Lon</th>
-            <th>Price</th>
-            <th>Image</th>
-            <th>Published</th>
-            <th colspan="14"></th>
-          </tr>
-        </thead>
-        <tbody>
-          @foreach ($apartments as $apartment)
-          <tr>
-            <td>{{$apartment->id}}</td>
-            <td>{{$apartment->title}}</td>
-            <td>{{$apartment->description}}</td>
-            <td>{{$apartment->number_of_rooms}}</td>
-            <td>{{$apartment->number_of_bath}}</td>
-            <td>{{$apartment->number_of_beds}}</td>
-            <td>{{$apartment->meters}}</td>
-            <td>{{$apartment->address}}</td>
-            <td>{{$apartment->latitude}}</td>
-            <td>{{$apartment->longitude}}</td>
-            <td>{{$apartment->price_for_night}}</td>
-            {{-- <td>{{$apartment->image_path}}</td> --}}
-            <td>{{$apartment->published}}</td>
-            <td><a class="btn btn-primary" href="{{route('host.apartments.show', $apartment->id)}}">View</a> </td>
-            <td><a class="btn btn-primary" href="{{route('host.apartments.edit', $apartment->id)}}">Edit</a> </td>
-            <td><a class="btn btn-primary" href="{{route('host.apartments.sponsor', $apartment->id)}}">Sponsorizza</a> </td>
-            <td>
-            <form action="{{route('host.apartments.destroy', $apartment)}}" method="post">
-                @csrf
-                @method('DELETE')
-                <button class="btn btn-danger" type="submit">Delete</button>  
-              </form>
-            </td>
-          </tr>
-          @endforeach
-        </tbody>
-      </table>
+    </section>
+  </div>
+  @if ($apartments->isEmpty())
+  <section id="announce" style="background-image: url('storage/images/ImmagineAnnuncio1.jpg');">
+    <div class="container-announce">
+      <div class="announce-title">
+        <h2>Non sei ancora un host? <br>Pubblica il tuo annuncio ed entra a far parte del mondo BoolBnb</h2>
+      </div>
+      <div class="btn btn-info button-announce">Pubblica!
+      </div>
     </div>
-    <canvas id="canvas" width="20" height="20"></canvas>
-</div>
-<script src="{{asset('js/app.js')}}"></script>
+  </section>
+  @else
+  <div class="container">
+    <section id="host_apartments">
+      <h2>I tuoi annunci</h2>
+      <div class="container_apartments">
+        @foreach ($apartments as $apartment)
+          <div class="single_apartment">
+            <div class="single_apartment_title">
+              <h5>{{$apartment->title}}</h5>
+            </div>
+            <div class="single_apartment_image">
+              <img src="https://images-1.casa.it/360x265/listing/3d8c6961724b6692931a5efd8ab5c0dd" alt="">
+            </div>
+            <div class="single_apartment_buttons">
+              <a href="">Anteprima</a>
+              <a href="">Sponsorizza</a>
+              <a href="">Modifica</a>
+              <a href="">Elimina</a>
+            </div>
+          </div>
+        @endforeach
+      </div>
+    </section>
+  </div>
+  <section id="announce" style="background-image: url('https://www.welcomekado.com/wp-content/uploads/2018/10/affittare-casa-vacanza.jpg');">
+    <div class="container-announce">
+      <div class="announce-title">
+        <h2>Guarda le statistiche dei tuoi appartamenti</h2>
+      </div>
+      <div class="btn btn-info button-announce" id="chart_button">Guarda!
+      </div>
+    </div>
+  </section>
+  <div class="chart-container" style="position:fixed; background-color: white; z-index:999999;">
+    <canvas id="canvas"></canvas>
+    <a id="close_chart">X</a>
+  </div>
+  @endif
+    <footer class="footer">
+      <div class="footer-copyright text-center py-3">© 2020 Copyright
+        <a href="https://mdbootstrap.com/education/bootstrap/"> BoolBnB</a>
+      </div>
+    </footer>
 @endsection

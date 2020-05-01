@@ -71092,9 +71092,9 @@ module.exports = function(module) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
-
 var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 var Chart = __webpack_require__(/*! chart.js */ "./node_modules/chart.js/dist/Chart.js");
 
@@ -71108,6 +71108,8 @@ $(document).ready(function () {
       Title.push(data.title);
     });
     var ctx = document.getElementById("canvas").getContext('2d');
+    ctx.canvas.width = 1137;
+    ctx.canvas.height = 528;
     var myChart = new Chart(ctx, {
       type: 'bar',
       data: {
@@ -71115,7 +71117,8 @@ $(document).ready(function () {
         datasets: [{
           label: 'Visite',
           data: Views,
-          borderWidth: 1
+          borderWidth: 1,
+          backgroundColor: ["#34558b", "#d13b40 ", "#ffaf12 ", "#eaac9d", "#4ec5a5", "#565d47", "#798fa8", "#fd823e", "#117893 ", "#f0daa4", "#eaac9d", "#a2553a", "#72617d", "#b49c73 ", "#3b3d4b"]
         }]
       },
       options: {
@@ -71138,6 +71141,19 @@ $(document).ready(function () {
   $(document).on('click', '.name', function () {
     var inputAddress = $(this).text();
     addCorrectAddress(inputAddress);
+  });
+});
+$(document).ready(function () {
+  $('#chart_button').click(function () {
+    $('.chart-container').fadeIn();
+  });
+  $('#close_chart').click(function () {
+    $('.chart-container').fadeOut();
+  });
+  $(document).keyup(function (e) {
+    if (e.key === "Escape") {
+      $('.chart-container').fadeOut();
+    }
   });
 }); //---------------------------------------FUNCTIONS------------------------------------------------
 // FUNZIONE PER LA RICERCA DEGLI INDIRIZZI

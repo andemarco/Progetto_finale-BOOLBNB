@@ -26,7 +26,9 @@ body:hover {
 }
 
 .form-control-landing:active,
-.form-control-landing:focus {
+.form-control-landing:focus,
+.form-control-search:active,
+.form-control-search:focus {
     box-shadow: none;
     border-color: lightgray;
     outline: none;
@@ -84,12 +86,13 @@ body{
     margin: auto;
 }
 
-#form-copy {
+#form-welcome {
     height: 600px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-top: 0;
 }
 
 .btn {
@@ -380,5 +383,344 @@ body{
 }
 //FINE LOGIN-PAGE/REGISTER PAGE
 
+//PAGE SEARCH APARTMENT
+.form-control-search {
+    width: 70%;
+    height: 50px;
+    border: 1px solid lightgray;
+    border-right: 0;
+    border-radius: 0;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;padding-left: 10px;
+    font-size: 18px;   
+}
 
+.container-group {
+    display: flex;
+    flex-direction: row;
+}
 
+.label-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .label-title {
+        margin-top: 20px;
+        margin-bottom: 0;
+        margin-right: 20px;
+        height: 50px;
+        line-height: 45px;
+        font-size: 18px;
+        
+    }
+}
+
+.value-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#form-copy {
+    margin-top: 60px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#form-search {
+    margin-top: -16px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.form-group {
+    margin-top: 20px;
+    margin-bottom: 0;
+    .filter-input {
+        height: 50px;
+        width: 80px;
+        border-radius: 25px;
+        font-size: 18px;
+        box-shadow: none;
+        text-align: center;
+        padding-left: 12px;
+        border: 1px solid lightgray;
+    }
+    .filter-input:focus,
+    .filter-input:active {
+        box-shadow: none;
+        border: 1px solid #E84e4e;
+        outline: none;
+    }
+}
+
+.input-group {
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    .input-group-text {
+        border-radius: 25px;
+        background-color: white;
+        margin: 10px;
+        label {
+            font-size: 16px;
+            margin: auto;
+            padding-right: 5px;
+        }
+    }
+}
+
+.append-house {
+    margin-top: -42px;
+}
+//FINE LOGIN-PAGE/REGISTER PAGE
+
+//INDEX HOST
+#host_apartments {
+    text-align: center;
+    margin-top: 100px;
+    h2 {
+      color: black;
+      margin-bottom: 50px;
+    }
+    .container_apartments {
+      display: flex;
+      flex-wrap: wrap;
+      .single_apartment {
+        width: 48%;
+        margin: auto;
+        background-color: rgba(64, 64, 64, 1);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-bottom: 25px;
+        border-radius: 20px;
+        height: 330px;
+        box-shadow: 5px 5px 17px -8px rgba(0,0,0,1); -moz-box-shadow: 5px 5px 17px -8px rgba(0,0,0,1);
+        box-shadow: 5px 5px 17px -8px rgba(0,0,0,1);
+        color: white;
+        .single_apartment_title {
+          background-color: rgba(64, 64, 64, 1);
+          border-radius: 20px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          height: 10%;
+          h5 {
+            margin: auto;
+            font-size: 1.6em;
+          }
+        }
+        .single_apartment_buttons {
+          height: 12%;
+          border-radius: 20px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 20px;
+          a {
+            background-color: black;
+            color: white;
+            padding: 8px;
+            border-radius: 25px;
+            text-transform: uppercase;
+            font-size: 0.8em;
+          }
+          a:hover {
+            background-color: #E58788;
+            border: 1px solid #E58788;
+            transform: scale(1.05);
+            transition: 0.3s;
+            text-decoration: none;
+          }
+        }
+        .single_apartment_image {
+          height: 78%;
+          img {
+            max-width: 90%;
+            max-height: 100%;
+            margin: auto;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 576px){
+      #host_apartments {
+        .container_apartments {
+          display: flex;
+          .single_apartment {
+            width: 80%;
+            margin: auto;
+            margin-bottom: 10px;
+          }
+        }
+    }
+  }
+  @media (max-width: 768px){
+    #host_apartments {
+      .container_apartments {
+        display: flex;
+        .single_apartment {
+          width: 80%;
+          margin: auto;
+          margin-bottom: 10px;
+        }
+      }
+  }
+  }
+  .chart-container {
+    border: 2px solid black;
+    -webkit-box-shadow: 10px 10px 255px 130px rgba(130,126,130,1);
+    -moz-box-shadow: 10px 10px 255px 130px rgba(130,126,130,1);
+    box-shadow: 10px 10px 255px 130px rgba(130,126,130,1);
+    left: 50%;
+    top: 50%;
+    height: auto;
+    width: 90%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: none;
+  }
+ // FINE INDEX HOST
+
+ //INIZIO CREATE-EDIT
+ // APARTMENTS/CREATE
+// MIXIN
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin h1-jumbo {
+    font-size: 3em;
+    text-align: center;
+    opacity: 85%;
+    color: white;
+}
+@mixin border-text {
+    border: 1px solid white;
+    background-color: rgba(87, 80, 80, 0.4);
+    padding: 5px;
+}
+// JUMBO_CREATE
+.jumbo-create{
+    // background-image: url(“https://images.unsplash.com/photo-1523217582562-09d0def993a6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1100&q=80”);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 600px;
+    .box-jumbo-create{
+        @include flex-center;
+        padding-top: 250px;
+        .border-text {
+            @include border-text;
+        h1{
+            @include h1-jumbo;
+        }
+      }
+    }
+}
+// JUMBO-EDIT
+.jumbo-edit {
+    // background-image: url(“https://images.unsplash.com/photo-1467987506553-8f3916508521?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80”);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 600px;
+    @include flex-center;
+    .box-jumbo-edit {
+        @include flex-center;
+        .border-text{
+            @include border-text;
+            h1 {
+                @include h1-jumbo;
+            }
+        }
+    }
+}
+.box-create-edit{
+    padding: 5%;
+    display: flex;
+    justify-content: center;
+    // SERVICES
+    .box-services{
+        display: flex;
+        flex-direction: column;
+        .all-services{
+            display: flex;
+            flex-direction: row;
+            .checkbox-services{
+                margin: 5px;
+            }
+        }
+    }
+    .services-box-create {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        .flex-column{
+            @include flex-center;
+            flex-direction: column;
+            .input-text {
+                width: 60px;
+                text-align: center;
+            }
+        }
+    }
+    .search-box {
+        margin-top: 20px;
+    }
+}
+.box-rent{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 50px;
+    margin: auto;
+    flex-wrap: wrap;
+    padding: 5%;
+    .rent{
+        width: 400px;
+    }
+}
+hr{
+    width: 60px;
+    height: 2px;
+    background-color: black;
+    margin-bottom: 50px;
+}
+.steps-text{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0px;
+    h1{
+        font-weight: bold;
+    }
+}
+.box-steps{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 5%;
+    .box-check{
+        width: 300px;
+        .icon-box {
+            display: flex;
+            justify-content: center;
+            padding-bottom: 20px;
+            .fa-check-circle{
+                font-size: 30px;
+            }
+        }
+    }
+}

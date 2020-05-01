@@ -1,70 +1,64 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="form">
 
+  <div class="form" id="form-search" style="background-image: url('storage/images/ImmagineSearch.jpg');">
     <div class="form" id="form-copy">
       <div class="form-group city-search">
-        <input class="form-control" type="text" name="address" id="city" placeholder="insert your city" city-data="">
-        {{-- <button class="btn btn-warning" type="submit" id="btn-search">invia</button> --}}
-      {{-- <a class="btn btn-warning" id="btn-search">Search</a> --}}
+        <input class="form-control-search" type="text" name="address" id="city" placeholder="Inserisci la città di destinazione" city-data="">
+        <a class="btn btn-warning" id="btn-search"><i class="fas fa-search"></i></a>
       </div>
-      <a class="btn btn-warning" id="btn-search"><i class="fas fa-search"></i></a>
-      <div class="form-group">
-          <input id="latitude" class="form-control" type="text" name="latitude"  hidden>
+      <div class="container-group">
+        <div class="label-group">
+          <label class="label-title" for="radius">Raggio di ricerca</label>
+          <label class="label-title" for="number_of_bath">Bagni</label>
+          <label class="label-title" for="number_of_rooms">Camere</label>
+          <label class="label-title" for="number_of_beds">Letti</label>
+          <label class="label-title" for="price_for_night">Prezzo per notte</label>
+        </div>
+        <div class="value-group">
+          <div class="form-group">
+            <input class="filter-input" type="number" name="radius" id="radius" min="20"  value="20">
+          </div>
+          <div class="form-group">
+            <input class="filter-input" type="number" name="bath" id="bath" min="1" value="1">
+          </div>
+          <div class="form-group">
+            <input class="filter-input" type="number" name="rooms" id="rooms" min="1" value="1">
+          </div>
+          <div class="form-group">
+            <input class="filter-input" type="number" name="beds" id="beds" min="1" value="1">
+          </div>
+          <div class="form-group">
+            <input class="filter-input" type="number" name="price" id="price" min="1" value="1">
+          </div>
+        </div>
       </div>
-      <div class="form-group">
-          <input id="longitude" class="form-control" type="text" name="longitude" hidden>
-      </div>
-    </div>
-    <div class="append-house">
-
-    </div>
-
-      <div class="form-group">
-        <label for="radius">distanza in km</label>
-        <input type="number" name="radius" id="radius" min="20"  value="20">
-        {{-- <input type="range" name="radius" id="radius" min="20" max="1000"> --}}
-        {{-- <input type="range" name="radius" id="radius" value="24" min="20" max="1000" onchange="getvalor(this.value);" oninput="radius.value = radius.value">     <input type="text" name="ageOutputName" id="ageOutputId">  --}}
-      </div>
-
-      <div class="form-group">
-        <label for="number_of_bath">Bagni</label>
-        <input type="number" name="bath" id="bath">
-      </div>
-      <div class="form-group">
-        <label for="number_of_rooms">Stanze</label>
-        <input type="number" name="rooms" id="rooms">
-      </div>
-      <div class="form-group">
-        <label for="number_of_beds">Letti</label>
-        <input type="number" name="beds" id="beds">
-      </div>
-      <div class="form-group">
-        <label for="price_for_night">Prezzo per notte</label>
-        <input type="number" name="price" id="price">
-      </div>
-
-
-      </div>
-
-      <div class="input-group mb-3">
+      <div class="input-group">
         @foreach ($services as $service)
           <div class="input-group-text">
             <label for="{{$service->name}}">{{$service->name}}</label>
             <input class="service_check" type="checkbox" name="services[]" value="{{$service->id}}" aria-label="Checkbox for following text input">
           </div>
         @endforeach
-
-
+          </div>
+        <button class="btn btn-warning" id="btn-filter" type="submit">Filter</button>
+      </div>
+      
+      <div class="append">
+      </div>
     </div>
-    <button class="btn btn-warning" id="btn-filter" type="submit">Filter</button>
-  </div>
+    <div class="form-group">
+          <input id="latitude" class="form-control" type="text" name="latitude"  hidden>
+      </div>
+      <div class="form-group">
+          <input id="longitude" class="form-control" type="text" name="longitude" hidden>
+      </div>
+    </div>
 
 
-  <div class="append">
-  </div>
-
+    <div class="append-house">
+    </div>
   <script src="{{asset('js/app_search2.js')}}"></script>
   <script src="{{asset('js/app.js')}}"></script>
   <script id="entry-template" type="text/x-handlebars-template">
