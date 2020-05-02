@@ -60,6 +60,7 @@ body{
     width: 100vw;
     height: 100vh;
     margin: auto;
+    font-size: 12px;
     overflow-x: hidden;
 }
 
@@ -531,7 +532,7 @@ body{
             }
             a:hover {
                 transition: 0.3s;
-                font-size: 40px;
+                color: #E58788;
                 text-decoration: none;
             }
             .first-p {
@@ -873,8 +874,9 @@ hr{
         }
     }
 }
+ //FINE CREATE-EDIT
 
-//SPONSOR
+//SPONSOR PAGE
 #sponsor-container {
     background-color: rgba(255,255,255,0.4);
     #payment-form {
@@ -890,4 +892,56 @@ hr{
       }
     }
   }
+ //FINE SPONSOR PAGE
 
+ //SHOW APARTMENT PUBLIC
+ .container-show-apt {
+     width: 90%;
+     margin: auto;
+     margin-top: 80px;
+     p {
+         font-size: 18px;
+     }
+     .ul-services {
+         display: inline-block;
+         color: #e84e4e;
+         font-size: 18px;
+     }
+     .container-show-info {
+         display: flex;
+         flex-direction: row;
+         .p-info-box {
+            height: 30px;
+            border-radius: 25px;
+            background-color: white;
+            padding: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            line-height: 17px;
+            margin-right: 15px;
+            border: 1px solid #e84e4e;
+            margin-top: 20px;
+         } 
+     }
+     .p-price {
+         font-weight: bold;
+         font-size: 20px;
+         margin-top: 20px;
+     }
+     .container-show-message {
+        width: 80%;
+        margin: auto;
+        background-color: white;
+        border-radius: 25px;
+        padding: 30px;
+        .message-text-area {
+           border-radius: 25px;
+           width: 100%;
+           height: 200px;
+        }
+        .dimension-text-area {
+            width: 100%;
+        }
+    }
+ }
+//FINE SHOW APARTMENT PUBLIC

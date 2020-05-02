@@ -10930,6 +10930,7 @@ body {
   width: 100vw;
   height: 100vh;
   margin: auto;
+  font-size: 12px;
   overflow-x: hidden;
 }
 
@@ -11431,7 +11432,7 @@ body {
 
 .entry .card-apt .body-search-apt a:hover {
   transition: 0.3s;
-  font-size: 40px;
+  color: #E58788;
   text-decoration: none;
 }
 
@@ -11819,5 +11820,63 @@ hr {
 #sponsor-container #payment-form .form-group select:focus {
   border: 2px solid black;
   color: black;
+}
+
+.container-show-apt {
+  width: 90%;
+  margin: auto;
+  margin-top: 80px;
+}
+
+.container-show-apt p {
+  font-size: 18px;
+}
+
+.container-show-apt .ul-services {
+  display: inline-block;
+  color: #e84e4e;
+  font-size: 18px;
+}
+
+.container-show-apt .container-show-info {
+  display: flex;
+  flex-direction: row;
+}
+
+.container-show-apt .container-show-info .p-info-box {
+  height: 30px;
+  border-radius: 25px;
+  background-color: white;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  line-height: 17px;
+  margin-right: 15px;
+  border: 1px solid #e84e4e;
+  margin-top: 20px;
+}
+
+.container-show-apt .p-price {
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.container-show-apt .container-show-message {
+  width: 80%;
+  margin: auto;
+  background-color: white;
+  border-radius: 25px;
+  padding: 30px;
+}
+
+.container-show-apt .container-show-message .message-text-area {
+  border-radius: 25px;
+  width: 100%;
+  height: 200px;
+}
+
+.container-show-apt .container-show-message .dimension-text-area {
+  width: 100%;
 }
 
