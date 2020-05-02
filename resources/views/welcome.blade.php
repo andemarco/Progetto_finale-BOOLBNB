@@ -294,6 +294,7 @@
       <h2>Pubblica il tuo annuncio ed entra a far parte del mondo BoolBnb</h2>
     </div>
     <div class="btn button-announce">Pubblica!
+      <a href="apartments/create"></a>
     </div>
   </div>
 </section>

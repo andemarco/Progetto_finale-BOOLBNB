@@ -116,7 +116,7 @@ function searchApartments(address) {
                       number_of_bath: thisResult.number_of_bath,
                       number_of_beds: thisResult.number_of_beds,
                       price_for_night: thisResult.price_for_night,
-                      image_path: thisResult.image_path,
+                      image_path: 'storage/' + thisResult.image_path + '',
                       id: thisResult.id,
 
                   };

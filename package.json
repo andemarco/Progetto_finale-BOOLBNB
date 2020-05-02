@@ -24,6 +24,7 @@
     },
     "dependencies": {
         "chart.js": "^2.9.3",
-        "handlebars": "^4.7.6"
+        "handlebars": "^4.7.6",
+        "materialize-css": "^1.0.0-rc.2"
     }
 }

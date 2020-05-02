@@ -1,5 +1,7 @@
 @extends('layouts.app')
+
 @section('content')
+
     @if (session('delete'))
         <div class="alert alert-danger">
           You deleted the apartment: {{session('delete')->id}}
@@ -40,9 +42,9 @@
               <img src="https://images-1.casa.it/360x265/listing/3d8c6961724b6692931a5efd8ab5c0dd" alt="">
             </div>
             <div class="single_apartment_buttons">
-              <a href="">Anteprima</a>
-              <a href="">Sponsorizza</a>
-              <a href="">Modifica</a>
+              <a href="apartments/{{$apartment->id}}">Anteprima</a>
+              <a href="apartments/{{$apartment->id}}/sponsor">Sponsorizza</a>
+              <a href="apartments/{{$apartment->id}}/edit">Modifica</a>
               <a href="">Elimina</a>
             </div>
           </div>
@@ -64,9 +66,47 @@
     <a id="close_chart">X</a>
   </div>
   @endif
+  <hr class="hr-create">
+  <div class="steps-text">
+    <h1>Domande frequenti</h1>
+  </div>
+  <div class="box-question">
+    <div class="question">
+      <div class="box-faq">
+        <h5 class="faq">Chi può diventare un host di Boolbnb?</h5>
+        <p class="ask">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus amet possimus labore facilis, iure illo molestias sint nam doloribus excepturi sapiente officia! Consequuntur eveniet quis beatae, cumque nemo fugit voluptas! <i class="far fa-times-circle"></i></p>
+      </div>
+      <div class="box-faq">
+        <h5 class="faq">Su quale protezione posso contare per i danni all'alloggio?</h5>
+        <p class="ask">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus amet possimus labore facilis, iure illo molestias sint nam doloribus excepturi sapiente officia! Consequuntur eveniet quis beatae, cumque nemo fugit voluptas! <i class="far fa-times-circle"></i></p>
+      </div>
+    </div>
+    <div class="question">
+      <div class="box-faq">
+        <h5 class="faq">Che cosa viene richiesto agli ospiti prima di prenotare?</h5>
+        <p class="ask">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus amet possimus labore facilis, iure illo molestias sint nam doloribus excepturi sapiente officia! Consequuntur eveniet quis beatae, cumque nemo fugit voluptas! <i class="far fa-times-circle"></i></p>
+      </div>
+      <div class="box-faq">
+        <h5 class="faq">Come dovrei scegliere il prezzo per il mio alloggio?</h5>
+        <p class="ask">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus amet possimus labore facilis, iure illo molestias sint nam doloribus excepturi sapiente officia! Consequuntur eveniet quis beatae, cumque nemo fugit voluptas! <i class="far fa-times-circle"></i></p>
+      </div>
+    </div>
+    <div class="question">
+      <div class="box-faq">
+        <h5 class="faq">Quanto cosa pubblicare un annuncio?</h5>
+        <p class="ask">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus amet possimus labore facilis, iure illo molestias sint nam doloribus excepturi sapiente officia! Consequuntur eveniet quis beatae, cumque nemo fugit voluptas! <i class="far fa-times-circle"></i></p>
+      </div>
+      <div class="box-faq">
+        <h5 class="faq">In che modo Boolbnb mi aiuta nell'impostazione dei prezzi?</h5>
+        <p class="ask">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus amet possimus labore facilis, iure illo molestias sint nam doloribus excepturi sapiente officia! Consequuntur eveniet quis beatae, cumque nemo fugit voluptas! <i class="far fa-times-circle"></i></p>
+      </div>
+    </div>
+  </div>
     <footer class="footer">
       <div class="footer-copyright text-center py-3">© 2020 Copyright
         <a href="https://mdbootstrap.com/education/bootstrap/"> BoolBnB</a>
       </div>
     </footer>
+    <script src="{{asset('js/toggle.js')}}"></script>
+    <script src="{{asset('js/app.js')}}"></script>
 @endsection

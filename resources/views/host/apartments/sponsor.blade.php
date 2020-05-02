@@ -1,20 +1,20 @@
 @extends('layouts.app')
 @section('content')
-@if (session('no_insert'))
-    <div class="alert alert-danger">
-     Seleziona un piano per l'appartamento {{session('no_insert')->title}}
+<section id="announce" style="background-image: url('https://www.esitur.com/images/Restyle/imageResized1920x1080/Val-di-fassa-viaggio-in-pullman-dalle-marche.jpg');">
+  <div class="container-announce" id="sponsor-container">
+    @if (session('no_insert'))
+        <div class="alert alert-danger">
+         Seleziona un piano per l'appartamento {{session('no_insert')->title}}
+        </div>
+    @endif
+    @if (session('already_insert'))
+        <div class="alert alert-danger">
+         Appartamento {{session('already_insert')->title}} già sponsorizzato
+        </div>
+    @endif
+    <div class="announce-title">
+      <h2>Sponsorizza il tuo appartamento e triplica le prenotazioni!</h2>
     </div>
-@endif
-@if (session('already_insert'))
-    <div class="alert alert-danger">
-     Appartamento {{session('already_insert')->title}} già sponsorizzato
-    </div>
-@endif
-  <div class="container">
-    <h1>Stai sponsorizzando {{$apartment->title}}</h1>
-  </div>
-  <div class="container">
-    Scegli tra le nostre soluzioni:
     <form id="payment-form" class="" action="{{route('host.apartments.sponsorstore', $apartment->id)}}" method="post">
       @csrf
       @method('POST')
@@ -27,10 +27,9 @@
         </select>
       </div>
       <section class="payment-form" hidden>
-        <h2 class="payment-form-text">Riepilogo della sponsorizzazione</h3>
         <div class="payment-form-info">
           <p class="payment-form-info-paragraph">
-            La sponsorizzazione permetter&agrave; al tuo appartamento di avere la massima visibilit&agrave; e nelle ricerche verr&agrave; posizionato tra le prime proposte
+            Sponsorizzando il tuo appartmento, il tuo annuncio sarà presente in homepage per la durata della promo scelta.
           </p>
         </div>
         <div class="bt-drop-in-wrapper">
@@ -43,6 +42,13 @@
       </section>
     </form>
   </div>
-  <script src="https://js.braintreegateway.com/web/dropin/1.13.0/js/dropin.min.js"></script>
-  <script src="{{asset('js/app_payment.js')}}"></script>
+</section>
+<footer class="footer">
+  <div class="footer-copyright text-center py-3">© 2020 Copyright
+    <a href="https://mdbootstrap.com/education/bootstrap/"> BoolBnB</a>
+  </div>
+</footer>
+<script src="https://js.braintreegateway.com/web/dropin/1.13.0/js/dropin.min.js"></script>
+<script src="{{asset('js/app_payment.js')}}"></script>
+<script src="{{asset('js/app.js')}}"></script>
 @endsection

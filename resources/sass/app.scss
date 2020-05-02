@@ -1,5 +1,6 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css2?family=Sen&display=swap');
+
 
 // Variables
 @import 'variables';
@@ -10,6 +11,10 @@
 
 //WELCOME-PAGE
 //Hover
+body{
+    font-family: 'Sen', sans-serif;
+}
+
 body:hover {
     cursor: default;
 }
@@ -320,7 +325,6 @@ body{
     background-position: center;
     background-repeat: no-repeat;
     overflow-y: hidden;
-    // opacity: 50%;
 }
 
 .card-login {
@@ -358,19 +362,22 @@ body{
 }
   
   
-.btn-primary {
+.btn-family {
     border-radius: 25px;
     background-color: #E84E4E;
     border: 1px solid #E84e4e;
     transition: 0.5s;
+    color: white;
 }
 
-.btn-primary:active,
-.btn-primary:hover {
+.btn-family:hover,
+.btn-family:active,
+.btn-family:focus {
     background-color: #E58788;
     border: 1px solid #E58788;
     transform: scale(1.1);
     transition: 0.5s;
+    color: white;
 }
 
 .btn-link {
@@ -421,7 +428,7 @@ body{
     align-items: center;
 }
 
-#form-copy {
+#form-search-filter {
     margin-top: 60px;
     height: 600px;
     display: flex;
@@ -435,6 +442,23 @@ body{
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+}
+
+.box-form-filter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 25px;
+}
+
+@media (max-width: 576px){
+    .box-form-filter {
+        border-radius: 0;
+    }
 }
 
 .form-group {
@@ -475,8 +499,68 @@ body{
 }
 
 .append-house {
-    margin-top: -42px;
+    margin-top: -44px;
+    background-color: white;
 }
+
+.entry {
+    padding-top: 20px;
+    .card-apt {
+        // height: 300px;
+        padding: 20px;
+        width: 84%;
+        border-top: 1px solid lightgray;
+        border-bottom: 1px solid lightgray;
+        border-left: 0;
+        border-right: 0;
+        margin: auto;
+        margin-bottom: 20px;
+        .image-search-apt {
+            height: 270px;
+            width: 330px;
+            border-radius: 25px;
+        }
+        .body-search-apt {
+            padding-left: 20px;
+            font-size: 17px;
+            a {
+                padding-bottom: 5px;
+                color: black;
+                font-weight: bold;
+                transition: 0.3s; 
+            }
+            a:hover {
+                transition: 0.3s;
+                font-size: 40px;
+                text-decoration: none;
+            }
+            .first-p {
+                border-top: 2px solid #E58788;
+                padding-top: 1rem;
+            }
+            .last-p {
+                font-weight: bold;
+                font-size: 19px;
+            }
+        }
+        
+    }
+}
+@media (max-width: 992px) {
+    .card-apt {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+@media (min-width: 992px) {
+    .card-apt {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
 //FINE LOGIN-PAGE/REGISTER PAGE
 
 //INDEX HOST
@@ -586,6 +670,71 @@ body{
     text-align: center;
     display: none;
   }
+
+  .hr-create {
+    width: 60px;
+    height: 2px;
+    background-color: black;
+    margin-bottom: 40px;
+}
+    .steps-text{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    h1{
+        font-weight: bold;
+        font-size: 50px;
+        text-align: center;
+    }
+}
+
+.hr-create {
+    width: 60px;
+    height: 2px;
+    background-color: black;
+    margin-bottom: 40px;
+}
+.steps-text{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    h1{
+        font-weight: bold;
+        font-size: 50px;
+        text-align: center;
+    }
+}
+
+.box-question{
+    margin-top: 50px;
+    .question {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        .box-faq {
+            width: 500px;
+            margin: 15px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid lightgray;
+            .ask {
+               display: none; 
+            }
+            .faq{
+                color: lightseagreen;
+            }
+            .faq:hover{
+                text-decoration-line: underline;
+            }
+            .fa-times-circle{
+                color: #e84e4e;
+                margin-left: 10px;
+                font-size: 20px;
+            }
+        }
+    }
+}
+
  // FINE INDEX HOST
 
  //INIZIO CREATE-EDIT
@@ -724,3 +873,21 @@ hr{
         }
     }
 }
+
+//SPONSOR
+#sponsor-container {
+    background-color: rgba(255,255,255,0.4);
+    #payment-form {
+      .form-group {
+        select {
+          background-color: #E58788;
+          color: white;
+        }
+        select:focus {
+          border: 2px solid black;
+          color: black;
+        }
+      }
+    }
+  }
+

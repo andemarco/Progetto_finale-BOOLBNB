@@ -4,5 +4,6 @@
     "/js/app_payment.js": "/js/app_payment.js",
     "/js/app_search.js": "/js/app_search.js",
     "/js/app_search2.js": "/js/app_search2.js",
-    "/js/app_show.js": "/js/app_show.js"
+    "/js/app_show.js": "/js/app_show.js",
+    "/js/toggle.js": "/js/toggle.js"
 }
