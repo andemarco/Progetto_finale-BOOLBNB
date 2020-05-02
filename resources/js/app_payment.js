@@ -1,5 +1,7 @@
-require('./bootstrap');
 const $ = require('jquery');
+
+require('./bootstrap');
+
 $(document).ready(function () {
     $('#subscription-plan').change(function () {
         $('#bt-dropin').html('');

@@ -179,6 +179,8 @@ class ApartmentController extends Controller
         }
         //istanza modifiche dell'appartamento
         $apartment->user_id = $userId;
+        $apartment->title = $data['title'];
+        $apartment->description = $data['description'];
         $apartment->number_of_rooms = $data['number_of_rooms'];
         $apartment->number_of_beds = $data['number_of_beds'];
         $apartment->number_of_bath = $data['number_of_bath'];
@@ -213,6 +215,8 @@ class ApartmentController extends Controller
         }
         //elimino solo l'appartamento e "stacco" i servizi correlati.
         $apartment->services()->detach();
+        $apartment->messages()->where('apartment_id', $apartment->id)->delete();
+        $apartment->orders()->where('apartment_id', $apartment->id)->delete();
         $apartment->delete();
         return redirect()->route('host.apartments.index')->with('delete', $apartment);
     }

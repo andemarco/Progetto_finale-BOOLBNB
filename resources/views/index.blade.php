@@ -22,16 +22,16 @@
               <input class="filter-input" type="number" name="radius" id="radius" min="20"  value="20">
             </div>
             <div class="form-group">
-              <input class="filter-input" type="number" name="bath" id="bath" min="1" value="1">
+              <input class="filter-input" type="number" name="bath" id="bath" min="1" value="">
             </div>
             <div class="form-group">
-              <input class="filter-input" type="number" name="rooms" id="rooms" min="1" value="1">
+              <input class="filter-input" type="number" name="rooms" id="rooms" min="1" value="">
             </div>
             <div class="form-group">
-              <input class="filter-input" type="number" name="beds" id="beds" min="1" value="1">
+              <input class="filter-input" type="number" name="beds" id="beds" min="1" value="">
             </div>
             <div class="form-group">
-              <input class="filter-input" type="number" name="price" id="price" min="1" value="1">
+              <input class="filter-input" type="number" name="price" id="price" min="1" value="">
             </div>
           </div>
         </div>

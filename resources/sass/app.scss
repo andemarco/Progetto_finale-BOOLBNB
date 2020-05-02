@@ -60,7 +60,7 @@ body{
     width: 100vw;
     height: 100vh;
     margin: auto;
-    font-size: 12px;
+    // font-size: 12px;
     overflow-x: hidden;
 }
 
@@ -68,6 +68,8 @@ body{
     width: 100%;
     position: fixed;
     display: flex;
+    top:0;
+    left: 0;
     z-index: 1010;
     .container {
         width: 100%;
@@ -156,6 +158,10 @@ body{
     padding-bottom: 20px;
 }
 
+.active-carousel {
+    justify-content: center;
+}
+
 .form-control-landing {
     width: 70%;
     height: 50px;
@@ -166,8 +172,12 @@ body{
     border-bottom-left-radius: 25px;padding-left: 10px;
     font-size: 18px;   
 }
-
+.box-apt {
+    width: 100%;
+}
 .box-container {
+    width: 80%;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -254,7 +264,6 @@ body{
         }
     }
 }
-
 
 #announce {
     width: 100%;
@@ -899,6 +908,9 @@ hr{
      width: 90%;
      margin: auto;
      margin-top: 80px;
+     h1 {
+         margin-top: 20px;
+     }
      p {
          font-size: 18px;
      }
@@ -907,9 +919,16 @@ hr{
          color: #e84e4e;
          font-size: 18px;
      }
+     .container-show-image {
+         width: 80%;
+         img {
+         border-radius: 25px;
+         height: 100%;
+         
+         }
+     }
      .container-show-info {
          display: flex;
-         flex-direction: row;
          .p-info-box {
             height: 30px;
             border-radius: 25px;
@@ -938,10 +957,64 @@ hr{
            border-radius: 25px;
            width: 100%;
            height: 200px;
+           border: 1px solid lightgray;
+           outline: none;
+           padding: 10px;
         }
         .dimension-text-area {
             width: 100%;
         }
     }
+    #button-show {
+        margin-top: 20px;
+    }
+ }
+
+ @media(min-width: 576px) { 
+    .container-show-info {
+        flex-direction: row;
+    }
+    .container-show-image {
+        height: 480px;
+     }  
+}
+
+@media(max-width: 576px) { 
+    .container-show-info {
+        flex-direction: column;
+        width: 200px;
+    }
+    .container-show-image {
+        height: 250px;
+        margin: auto;
+     }  
+}
+
+
+
+ .alert-success {
+     border-radius: 25px;
  }
 //FINE SHOW APARTMENT PUBLIC
+
+//SHOW APARTMENT HOST
+.ul-services-host {
+    display: inline-block;
+    color: #e84e4e;
+    font-size: 18px;
+    margin-bottom: 50px;
+}
+
+.message-host {
+    color: #E84e4e;
+    border-top: 1px solid lightgray;
+    padding-top: 10px;
+}
+.card-message-contact {
+    border-radius: 25px;
+    .card-sender {
+        color: #e58788;
+    }
+}
+
+

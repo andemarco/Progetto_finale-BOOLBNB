@@ -42405,11 +42405,11 @@ module.exports = function(module) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
-
 var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
 var Handlebars = __webpack_require__(/*! handlebars */ "./node_modules/handlebars/dist/cjs/handlebars.js");
+
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 var lat = $('.lat').val();
 var lon = $('.lon').val();

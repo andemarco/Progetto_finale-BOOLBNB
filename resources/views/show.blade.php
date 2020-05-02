@@ -1,14 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-@if (session('message'))
-    <div class="alert alert-danger">
-      You create a message: {{session('message')->id}}
-    </div>
-@endif
 <div class="container-show-apt">
+  @if (session('message'))
+  <div class="alert alert-success">
+    Hai inviato correttamente il messaggio.
+  </div>
+  @endif
   <div class="container-show-image">
-    <img src="{{asset('storage/' . $apartment->image_path)}}" max-height="480px" max-width="640px" alt="">
+    <img src="{{asset('storage/' . $apartment->image_path)}}" alt="">
   </div>
   <h1>{{$apartment->title}}</h1>
   <p>Posizione: {{$apartment->address}}</p>
@@ -37,7 +37,6 @@
       <li>{{$service['name']}}</li>
     </ul>
   @endforeach
-  {{-- <img src="" class="image" alt=""> --}}
   <div class="container-show-message">
     <h2>Contatta l'host</h2>
     <form action="{{route('message.writeMessage')}} " method="post">
@@ -57,11 +56,12 @@
         <label for="email">La tua mail</label>
         <input type="text" name="email" class="form-control" value="{{ (Auth::user()) ? Auth::user()->email : '' }}">
       </div>
-      <button type="submit" class="btn btn-family">Invia</button>
+      <button type="submit" class="btn btn-family" id="button-show">Invia</button>
     </form>
   </div>
 </div>  
 
 
   <script src="{{asset('js/app_show.js')}}"></script>
+  <script src="{{asset('js/app.js')}}"></script>
 @endsection

@@ -1,5 +1,7 @@
-require('./bootstrap');
 const $ = require('jquery');
+
+require('./bootstrap');
+
 
 $(document).ready(function() {
   $(window).on('scroll', function() {

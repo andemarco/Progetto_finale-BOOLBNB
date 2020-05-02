@@ -5,7 +5,7 @@
     <div class="jumbo-create">
       <div class="box-jumbo-create">
         <div class="border-text">
-          <h1>DIventa un host Boolbnb e inizia a guadagnare</h1>
+          <h1>Diventa un host Boolbnb e inizia a guadagnare</h1>
         </div>
       </div>
     </div>
@@ -172,8 +172,9 @@
       </form>
     </div>
   </div>
+  <script src="{{asset('js/app.js')}}"></script>
 @endsection
-<script src="{{asset('js/app.js')}}"></script>
+
 
 
 

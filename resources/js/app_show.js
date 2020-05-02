@@ -1,7 +1,9 @@
-require('./bootstrap');
-
 const $ = require('jquery');
 const Handlebars = require("handlebars");
+
+
+require('./bootstrap');
+
 
   var lat = $('.lat').val();
   var lon = $('.lon').val();

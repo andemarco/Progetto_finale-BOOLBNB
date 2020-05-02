@@ -24,240 +24,70 @@
 </div>
 
 <section id='sponsored-apt'>
-<div class="apt-container pt-5">
-  <h2 class="sponsor-title text-center">I nostri appartamenti in evidenza</h2>
-  <div class="box-apt">
-    <div class="box-container">
-      <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
-        <i class="fas fa-angle-left"></i>
-      </a>
-
-      {{-- BOX APARTMENTS SPONSORED --}}
-      <div class="row">
-        <div id="carousel" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class="d-none d-lg-block">
-                <div class="slide-box">
-                  <div class="single-apt" id="apt1">
-                    <div class="apt-image">
-                      <img class="house-image" src="{{asset('storage/images/slider1.jpeg')}}" alt="">
-                    </div>
-                    <div class="apt-info p-3">
-                      <h5>App Title</h5>
-                      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-                    </div> 
+  <div class="apt-container pt-5">
+    <h2 class="sponsor-title text-center">I nostri appartamenti in evidenza</h2>
+      <div class="box-apt">
+        <div class="box-container">
+          <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+            <i class="fas fa-angle-left"></i>
+          </a>
+          {{-- BOX APARTMENTS SPONSORED --}}
+            <div id="carousel" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner d-none">
+                @foreach ($sponsorized_apts->chunk(3) as $sponsorized_apt)
+                <div class="carousel-item {{($loop->first) ? 'active' : ''}} ">
+                  <div class="row active-carousel">
+                    @foreach ($sponsorized_apt as $item)
+                  <div class="d-none d-lg-block">
+                    <div class="slide-box">
+                      <div class="single-apt" id="apt1">
+                        <div class="apt-image">
+                        <img class="house-image" src="{{asset('storage/' . $item->image_path)}}" alt="{{$item->title}}">
+                        </div>
+                        <div class="apt-info p-3">
+                          <h5>{{ $item->title }}</h5>
+                          <p>{{ $item->address }}</p>
+                        </div> 
+                      </div>
+                      </div>
                   </div>
-                  <div class="single-apt" id="apt2">
-                    <div class="apt-image">
-                      <img class="house-image" src="{{asset('storage/images/slider2.jpeg')}}" alt="">
-                    </div>
-                    <div class="apt-info p-3">
-                      <h5>App Title</h5>
-                      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-                    </div>
-                  </div>
-                  <div class="single-apt" id="apt3">
-                    <div class="apt-image">
-                      <img class="house-image" src="{{asset('storage/images/slider3.jpeg')}}" alt="">
-                    </div>
-                    <div class="apt-info p-3">
-                      <h5>App Title</h5>
-                      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-                    </div>
-                  </div>
-                  <div class="single-apt" id="apt4">
-                    <div class="apt-image">
-                      <img class="house-image" src="{{asset('storage/images/slider4.jpeg')}}" alt="">
-                    </div>
-                    <div class="apt-info p-3">
-                      <h5>App Title</h5>
-                      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-                    </div>
+                  @endforeach
                   </div>
                 </div>
+                @endforeach
               </div>
-              <div class="d-none d-md-block d-lg-none">
-                <div class="slide-box">
-                  <div class="single-apt" id="apt1">
-                    <div class="apt-image">
-                      <img class="house-image" src="{{asset('storage/images/slider1.jpeg')}}" alt="">
-                    </div>
-                    <div class="apt-info p-3">
-                      <h5>App Title</h5>
-                      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-                    </div> 
+              <div class="carousel-inner active">
+                @foreach ($sponsorized_apts->chunk(2) as $sponsorized_apt)
+                <div class="carousel-item {{($loop->first) ? 'active' : ''}} ">
+                  <div class="row active-carousel">
+                    @foreach ($sponsorized_apt as $item)
+                  <div class="d-none d-lg-block">
+                    <div class="slide-box">
+                      <div class="single-apt" id="apt1">
+                        <div class="apt-image">
+                        <img class="house-image" src="{{asset('storage/' . $item->image_path)}}" alt="{{$item->title}}">
+                        </div>
+                        <div class="apt-info p-3">
+                          <h5>{{ $item->title }}</h5>
+                          <p>{{ $item->address }}</p>
+                        </div> 
+                      </div>
+                      </div>
                   </div>
-                  <div class="single-apt" id="apt2">
-                    <div class="apt-image">
-                      <img class="house-image" src="{{asset('storage/images/slider2.jpeg')}}" alt="">
-                    </div>
-                    <div class="apt-info p-3">
-                      <h5>App Title</h5>
-                      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-                    </div>
-                  </div>
-                  <div class="single-apt" id="apt3">
-                    <div class="apt-image">
-                      <img class="house-image" src="{{asset('storage/images/slider3.jpeg')}}" alt="">
-                    </div>
-                    <div class="apt-info p-3">
-                      <h5>App Title</h5>
-                      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-                    </div>
+                  @endforeach
                   </div>
                 </div>
+                @endforeach
               </div>
-              <div class="d-none d-sm-block d-md-none">
-                <div class="slide-box">
-                  <div class="single-apt" id="apt1">
-                    <div class="apt-image">
-                      <img class="house-image" src="{{asset('storage/images/slider1.jpeg')}}" alt="">
-                    </div>
-                    <div class="apt-info p-3">
-                      <h5>App Title</h5>
-                      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-                    </div> 
-                  </div>
-                  <div class="single-apt" id="apt2">
-                    <div class="apt-image">
-                      <img class="house-image" src="{{asset('storage/images/slider2.jpeg')}}" alt="">
-                    </div>
-                    <div class="apt-info p-3">
-                      <h5>App Title</h5>
-                      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="d-block d-sm-none">
-                <div class="single-apt" id="apt1">
-                  <div class="apt-image">
-                    <img class="house-image" src="{{asset('storage/images/slider1.jpeg')}}" alt="">
-                  </div>
-                  <div class="apt-info p-3">
-                    <h5>App Title</h5>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-                  </div> 
-                </div>
-              </div>  
-            </div>
-            <div class="carousel-item">
-              <div class="d-none d-lg-block">
-                <div class="slide-box">
-                  <div class="single-apt" id="apt1">
-                    <div class="apt-image">
-                      <img class="house-image" src="{{asset('storage/images/slider4.jpeg')}}" alt="">
-                    </div>
-                    <div class="apt-info p-3">
-                      <h5>App Title</h5>
-                      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-                    </div> 
-                  </div>
-                  <div class="single-apt" id="apt2">
-                    <div class="apt-image">
-                      <img class="house-image" src="{{asset('storage/images/slider5.jpeg')}}" alt="">
-                    </div>
-                    <div class="apt-info p-3">
-                      <h5>App Title</h5>
-                      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-                    </div>
-                  </div>
-                  <div class="single-apt" id="apt3">
-                    <div class="apt-image">
-                      <img class="house-image" src="{{asset('storage/images/slider6.jpeg')}}" alt="">
-                    </div>
-                    <div class="apt-info p-3">
-                      <h5>App Title</h5>
-                      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-                    </div>
-                  </div>
-                  <div class="single-apt" id="apt4">
-                    <div class="apt-image">
-                      <img class="house-image" src="{{asset('storage/images/slider7.jpeg')}}" alt="">
-                    </div>
-                    <div class="apt-info p-3">
-                      <h5>App Title</h5>
-                      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="d-none d-md-block d-lg-none">
-                <div class="slide-box">
-                  <div class="single-apt" id="apt1">
-                    <div class="apt-image">
-                      <img class="house-image" src="{{asset('storage/images/slider4.jpeg')}}" alt="">
-                    </div>
-                    <div class="apt-info p-3">
-                      <h5>App Title</h5>
-                      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-                    </div> 
-                  </div>
-                  <div class="single-apt" id="apt2">
-                    <div class="apt-image">
-                      <img class="house-image" src="{{asset('storage/images/slider5.jpeg')}}" alt="">
-                    </div>
-                    <div class="apt-info p-3">
-                      <h5>App Title</h5>
-                      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-                    </div>
-                  </div>
-                  <div class="single-apt" id="apt3">
-                    <div class="apt-image">
-                      <img class="house-image" src="{{asset('storage/images/slider6.jpeg')}}" alt="">
-                    </div>
-                    <div class="apt-info p-3">
-                      <h5>App Title</h5>
-                      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="d-none d-sm-block d-md-none">
-                <div class="slide-box">
-                  <div class="single-apt" id="apt1">
-                    <div class="apt-image">
-                      <img class="house-image" src="{{asset('storage/images/slider4.jpeg')}}" alt="">
-                    </div>
-                    <div class="apt-info p-3">
-                      <h5>App Title</h5>
-                      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-                    </div> 
-                  </div>
-                  <div class="single-apt" id="apt2">
-                    <div class="apt-image">
-                      <img class="house-image" src="{{asset('storage/images/slider5.jpeg')}}" alt="">
-                    </div>
-                    <div class="apt-info p-3">
-                      <h5>App Title</h5>
-                      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="d-block d-sm-none">
-                <div class="single-apt" id="apt1">
-                  <div class="apt-image">
-                    <img class="house-image" src="{{asset('storage/images/slider4.jpeg')}}" alt="">
-                  </div>
-                  <div class="apt-info p-3">
-                    <h5>App Title</h5>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-                  </div> 
-                </div>
-              </div>
-            </div>  
           </div>
+          <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+            <i class="fas fa-angle-right"></i>
+          </a>
         </div>
-      </div>
-      <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
-        <i class="fas fa-angle-right"></i>
-      </a>
-    </div>
-  </div>  
-</div>
+      </div>  
+  </div>
 </section>
+
 <section id="details">
   <div class="container">
       <h2 class="sponsor-title text-center">I nostri punti di forza</h2>

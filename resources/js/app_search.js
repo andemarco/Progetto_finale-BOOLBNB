@@ -1,7 +1,7 @@
-require('./bootstrap');
-
 const $ = require('jquery');
 const Handlebars = require("handlebars");
+
+require('./bootstrap');
 
 $(document).ready(function () {
   $('#btn-search').click(function() {

@@ -1,6 +1,7 @@
+const $ = require('jquery');
+
 require('./bootstrap');
 
-const $ = require('jquery');
 const Handlebars = require("handlebars");
 var queryString = decodeURIComponent(window.location.search);
 query(queryString);

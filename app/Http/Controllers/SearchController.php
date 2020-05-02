@@ -16,8 +16,8 @@ class SearchController extends Controller
   {
     $now = Carbon::now(+2);
     $orders = Order::where('sponsor_due_date', '>', $now)->get('apartment_id');
-    $sponsorized_apt = Apartment::whereIn('id', $orders)->get();
-    return view('welcome', compact('sponsorized_apt'));
+    $sponsorized_apts = Apartment::whereIn('id', $orders)->get();
+    return view('welcome', compact('sponsorized_apts'));
   }
   public function index()
   {
