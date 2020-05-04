@@ -1,7 +1,6 @@
 @extends('layouts.app')
 @section('content')
-
-<div class="jumbo" style="background-image: url('storage/images/ImmagineBack.jpg');">
+<div class="jumbotron" style="background-image: url('storage/images/ImmagineBack.jpg');">
   <section id='city-search'>
     <div class="content">
       <div class="form" id="form-welcome">
@@ -22,53 +21,29 @@
     </div>
   </section>
 </div>
-
 <section id='sponsored-apt'>
   <div class="apt-container pt-5">
     <h2 class="sponsor-title text-center">I nostri appartamenti in evidenza</h2>
-      <div class="box-apt">
+{{-- carousel with 3 elements for lg display --}}
+      <div class="box-apt large-carousel">
         <div class="box-container">
           <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
             <i class="fas fa-angle-left"></i>
           </a>
-          {{-- BOX APARTMENTS SPONSORED --}}
             <div id="carousel" class="carousel slide" data-ride="carousel">
-              <div class="carousel-inner d-none">
+              <div class="carousel-inner">
                 @foreach ($sponsorized_apts->chunk(3) as $sponsorized_apt)
                 <div class="carousel-item {{($loop->first) ? 'active' : ''}} ">
                   <div class="row active-carousel">
                     @foreach ($sponsorized_apt as $item)
-                  <div class="d-none d-lg-block">
+                  <div>
                     <div class="slide-box">
                       <div class="single-apt" id="apt1">
                         <div class="apt-image">
                         <img class="house-image" src="{{asset('storage/' . $item->image_path)}}" alt="{{$item->title}}">
                         </div>
                         <div class="apt-info p-3">
-                          <h5>{{ $item->title }}</h5>
-                          <p>{{ $item->address }}</p>
-                        </div> 
-                      </div>
-                      </div>
-                  </div>
-                  @endforeach
-                  </div>
-                </div>
-                @endforeach
-              </div>
-              <div class="carousel-inner active">
-                @foreach ($sponsorized_apts->chunk(2) as $sponsorized_apt)
-                <div class="carousel-item {{($loop->first) ? 'active' : ''}} ">
-                  <div class="row active-carousel">
-                    @foreach ($sponsorized_apt as $item)
-                  <div class="d-none d-lg-block">
-                    <div class="slide-box">
-                      <div class="single-apt" id="apt1">
-                        <div class="apt-image">
-                        <img class="house-image" src="{{asset('storage/' . $item->image_path)}}" alt="{{$item->title}}">
-                        </div>
-                        <div class="apt-info p-3">
-                          <h5>{{ $item->title }}</h5>
+                          <h5> <a href="{{route('host.apartments.sponsor', $item->title)}}">{{ $item->title }}</a></h5>
                           <p>{{ $item->address }}</p>
                         </div> 
                       </div>
@@ -85,9 +60,83 @@
           </a>
         </div>
       </div>  
+{{-- end of carousel with 3 elements for lg display --}}
+{{-- carousel with 2 elements for md display --}}
+      <div class="box-apt medium-carousel">
+        <div class="box-container">
+          {{-- <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+            <i class="fas fa-angle-left"></i>
+          </a> --}}
+            <div id="carousel" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner">
+                @foreach ($sponsorized_apts->chunk(2) as $sponsorized_apt)
+                <div class="carousel-item {{($loop->first) ? 'active' : ''}} ">
+                  <div class="row active-carousel">
+                    @foreach ($sponsorized_apt as $item)
+                  <div>
+                    <div class="slide-box">
+                      <div class="single-apt" id="apt1">
+                        <div class="apt-image">
+                        <img class="house-image" src="{{asset('storage/' . $item->image_path)}}" alt="{{$item->title}}">
+                        </div>
+                        <div class="apt-info p-3">
+                          <h5>{{ $item->title }}</h5>
+                          <p>{{ $item->address }}</p>
+                        </div> 
+                      </div>
+                      </div>
+                  </div>
+                  @endforeach
+                  </div>
+                </div>
+                @endforeach
+              </div>
+              </div>
+          {{-- <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+            <i class="fas fa-angle-right"></i>
+          </a> --}}
+        </div>
+      </div>  
+{{-- end of carousel with 2 elements for md display --}}
+{{-- carousel with 1 elements for sm display --}}
+      <div class="box-apt small-carousel">
+        <div class="box-container">
+          {{-- <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+            <i class="fas fa-angle-left"></i>
+          </a> --}}
+            <div id="carousel" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner">
+                @foreach ($sponsorized_apts->chunk(1) as $sponsorized_apt)
+                <div class="carousel-item {{($loop->first) ? 'active' : ''}} ">
+                  <div class="row active-carousel">
+                    @foreach ($sponsorized_apt as $item)
+                  <div>
+                    <div class="slide-box">
+                      <div class="single-apt" id="apt1">
+                        <div class="apt-image">
+                        <img class="house-image" src="{{asset('storage/' . $item->image_path)}}" alt="{{$item->title}}">
+                        </div>
+                        <div class="apt-info p-3">
+                          <h5>{{ $item->title }}</h5>
+                          <p>{{ $item->address }}</p>
+                        </div> 
+                      </div>
+                      </div>
+                  </div>
+                  @endforeach
+                  </div>
+                </div>
+                @endforeach
+              </div>
+              </div>
+            {{-- <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+              <i class="fas fa-angle-right"></i>
+            </a> --}}
+        </div>
+      </div>  
+{{-- end of carousel with 1 elements for sm display --}}
   </div>
 </section>
-
 <section id="details">
   <div class="container">
       <h2 class="sponsor-title text-center">I nostri punti di forza</h2>
@@ -136,7 +185,5 @@
       <script src="{{asset('js/app_search.js')}}"></script>
       <script src="{{asset('js/app.js')}}"></script>
 @endsection
-
-
 
 

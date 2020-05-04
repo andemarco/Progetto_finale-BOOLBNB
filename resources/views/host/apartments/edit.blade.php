@@ -7,8 +7,12 @@
         </div>
       </div>
     </div>
-  <div class="container box-create-edit">
-    <div class="row">
+    <div class="box-arrow">
+      <h2>Modifica</h2>
+      <i class="far fa-arrow-alt-circle-down"></i>
+    </div>
+  <div class="box-create-edit">
+    <div class="box-row">
       <form action="{{route('host.apartments.update', $apartment->id)}}" method="post" enctype="multipart/form-data">
         @csrf
         @method('PATCH')
@@ -22,31 +26,31 @@
         </div>
         <div class="services-box-create">
           <div class="form-group flex-column">
-            <label for="number_of_rooms">Numeri di stanze</label>
+            <label for="number_of_rooms">Camere</label>
           <input class="form-control input-text" type="text" name="number_of_rooms" value="{{$apartment->number_of_rooms}}">
           </div>
           <div class="form-group flex-column">
-            <label for="number_of_bath">Numeri di bagni</label>
+            <label for="number_of_bath">Bagni</label>
             <input class="form-control input-text" type="text" name="number_of_bath" value="{{$apartment->number_of_bath}}">
           </div>
           <div class="form-group flex-column">
-            <label for="number_of_beds">Numeri di letti</label>
+            <label for="number_of_beds">Letti</label>
             <input class="form-control input-text" type="text" name="number_of_beds" value="{{$apartment->number_of_beds}}">
           </div>
           <div class="form-group flex-column">
-            <label for="meters">Metri</label>
+            <label for="meters">Metratura</label>
             <input class="form-control input-text" type="text" name="meters" value="{{$apartment->meters}}">
           </div>
         </div>
-        <div class="form-group">
+        <div class="form-group" hidden>
           <label for="address">Indirizzo</label>
           <input class="form-control" type="text" name="address" value="{{$apartment->address}}">
         </div>
-        <div class="form-group">
+        <div class="form-group" hidden>
           <label for="latitude">Latitudine</label>
           <input class="form-control" type="text" name="latitude" value="{{$apartment->latitude}}">
         </div>
-        <div class="form-group">
+        <div class="form-group" hidden>
           <label for="longitude">Longitudine</label>
           <input class="form-control" type="text" name="longitude" value="{{$apartment->longitude}}">
         </div>
@@ -54,7 +58,7 @@
           <label for="price_for_night">Prezzo per notte</label>
           <input class="form-control" type="text" name="price_for_night" value="{{$apartment->price_for_night}}">
         </div>
-        <div class="input-group mb-3">
+        <div class="input-group mb-3 box-publish">
           <div class="input-group-prepend">
             <label class="input-group-text" for="published">Options</label>
           </div>
@@ -77,16 +81,35 @@
         </div>
         <div class="form-group">
            <label for="images">Immagine</label>
-            @isset($apartment->image_path)
+            {{-- @isset($apartment->image_path)
               <img src="{{asset('storage/' . $apartment->image_path)}}" alt="">
-            @endisset
+            @endisset --}}
            <input type="file" name="image_path" accept="image/*">
         </div>
-        <button class="btn btn-primary" type="submit">Salva</button>
+        <button class="btn btn-family" type="submit">Salva</button>
       </form>
     </div>
   </div>
+  <script src="{{asset('js/toggle.js')}}"></script>
 @endsection
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

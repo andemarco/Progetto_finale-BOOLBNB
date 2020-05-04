@@ -17,4 +17,5 @@ const mix = require('laravel-mix');
         .js('resources/js/app_search2.js', 'public/js')
         .js('resources/js/app_show.js', 'public/js')
         .js('resources/js/app_payment.js', 'public/js')
-        .js('resources/js/toggle.js', 'public/js');
+        .js('resources/js/toggle.js', 'public/js')
+        .js('resources/js/app_navbar.js', 'public/js');

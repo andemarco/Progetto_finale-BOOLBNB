@@ -46,8 +46,13 @@
         <p>Pubblica qualsiasi alloggio senza addebiti di registrazione, da un salotto condiviso a una seconda casa e a tutto quello che c'è nel mezzo.</p>
       </div>
     </div>
-    <div class="container box-create-edit">
-    <div class="row">
+{{-- FORM -----------------> --}}
+    <hr>
+    <div class="steps-text">
+      <h1>Inserisci il tuo appartamento</h1>
+    </div>
+    <div class="box-create-edit">
+    <div class="box-row">
       <form action="{{route('host.apartments.store')}}" method="post" enctype="multipart/form-data">
         @csrf
         @method('POST')
@@ -119,7 +124,7 @@
           <div class="search-box">
             <ul id="address-list">
             </ul>
-            <button class="btn btn-primary mt-2 btn-search" type="button">Search</button>
+            <button class="btn btn-family mt-2 btn-search" type="button">Cerca</button>
           </div>
         </div>
         <div class="form-group">
@@ -130,14 +135,14 @@
         </div>
         <div class="form-group">
           <label for="price_for_night">Prezzo per notte</label>
-          <input class="form-control @error('price_for_night') is-invalid @enderror" type="text" name="price_for_night">
+          <input class="form-control @error('price_for_night') is-invalid @enderror" type="text" name="price_for_night" min="0" max="1000" value="">
           @error('price_for_night')
               <span class="invalid-feedback" role="alert">
                   <strong>{{ $message }}</strong>
               </span>
           @enderror
         </div>
-        <div class="input-group mb-3">
+        <div class="input-group mb-3 box-publish">
           <div class="input-group-prepend">
             <label class="input-group-text" for="published">Options</label>
           </div>
@@ -168,12 +173,30 @@
               </span>
             @enderror
         </div>
-        <button class="btn btn-primary" type="submit">Salva</button>
+        <button class="btn btn-family" type="submit">Salva</button>
       </form>
     </div>
   </div>
   <script src="{{asset('js/app.js')}}"></script>
+  <script src="{{asset('js/toggle.js')}}"></script>
 @endsection
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

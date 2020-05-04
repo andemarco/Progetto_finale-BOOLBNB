@@ -1,15 +1,9 @@
 const $ = require('jquery');
-
 require('./bootstrap');
-
-
 $(document).ready(function () {
     $('.faq').click(function () {
         $('.ask').hide();
         $(this).siblings('.ask').slideToggle();
-    });
-    $('.fa-times-circle').click(function () {
-        $('.ask').slideUp();
     });
     // NUMERICI EFFECT
     $('.count').each(function () {
@@ -23,4 +17,11 @@ $(document).ready(function () {
             }
         });
     });
+    $('.fa-arrow-alt-circle-down').click(function () {
+        $('.box-create-edit').slideToggle(1200);
+    });
 });
+
+
+
+

@@ -12,7 +12,7 @@
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 
-                        <div class="form-group row">
+                        <div class="form-group-register row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nome') }}</label>
 
                             <div class="col-md-6">
@@ -26,7 +26,7 @@
                             </div>
                         </div>
                         
-                        <div class="form-group row">
+                        <div class="form-group-register row">
                             <label for="surname" class="col-md-4 col-form-label text-md-right">{{ __('Cognome') }}</label>
 
                             <div class="col-md-6">
@@ -40,7 +40,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        <div class="form-group-register row">
                             <label for="date_of_birth" class="col-md-4 col-form-label text-md-right">{{ __('Data di nascita') }}</label>
 
                             <div class="col-md-6">
@@ -53,7 +53,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        <div class="form-group-register row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Indirizzo E-Mail') }}</label>
 
                             <div class="col-md-6">
@@ -67,7 +67,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        <div class="form-group-register row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
@@ -81,7 +81,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        <div class="form-group-register row">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Conferma Password') }}</label>
 
                             <div class="col-md-6">
@@ -89,7 +89,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row mb-0">
+                        <div class="form-group-register row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-family">
                                     {{ __('Registrati') }}

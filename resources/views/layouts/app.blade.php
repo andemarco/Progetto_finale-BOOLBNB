@@ -22,68 +22,103 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
+        <nav>
+            <div class="nav-left">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Boolbnb') }}
-                    <img src="{{asset('storage/images/LogoCorretto.png')}}" height="50" alt="">
+                    <img class="main-logo" src="{{asset('storage/images/LogoCorretto.png')}}" alt="">
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
+            </div>
+            <div class="nav-right">
+                <button id="ham-btn" type="button">
+                    <i class="fas fa-bars"></i>
                 </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                <ul class="auth-list">
                         <!-- Authentication Links -->
                         @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
-                            @endif
+                                @if (Route::has('register'))
+                                        <li class="nav-item">
+                                                <a class="nav-link" href="{{ route('register') }}">{{ __('Registrati') }}</a>
+                                        </li>
+                                @endif
                         @else
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{route('host.apartments.index')}}">
-                                    I tuoi annunci
-                                </a>
-                                <a class="dropdown-item" href="{{route('host.apartments.create')}}">
-                                    Inserisci appartamento
-                                </a>
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    @csrf
-                                </form>
-                            </div>
+                        <li class="nav-item dropdown-list-auth">
+                                    <a id="auth-btn" href="#">
+                                        {{ Auth::user()->name }} <span class="caret"></span>
+                                    </a>
+                                <div class="dropdown-menu-auth d-none">
+                                        <a class="dropdown-item" href="{{route('host.apartments.index')}}">
+                                                I tuoi annunci
+                                        </a>
+                                        <a class="dropdown-item" href="{{route('host.apartments.create')}}">
+                                                Inserisci appartamento
+                                        </a>
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                                onclick="event.preventDefault();
+                                                                            document.getElementById('logout-form').submit();">
+                                                {{ __('Logout') }}
+                                        </a>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                @csrf
+                                        </form>
+                                </div>
                         </li>
                         @endguest
-                    </ul>
-                </div>
+                </ul>
+                <ul class="auth-list-ham d-none">
+                        <!-- Authentication Links -->
+                        @guest
+                                <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                </li>
+                                @if (Route::has('register'))
+                                        <li class="nav-item">
+                                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                        </li>
+                                @endif
+                        @else
+                        <li class="nav-item dropdown-list-auth-ham">
+                                    {{-- <a id="auth-btn-ham" href="#">
+                                        {{ Auth::user()->name }} <span class="caret"></span>
+                                    </a> --}}
+                                <div class="dropdown-menu-auth-ham d-none">
+                                        <a class="dropdown-item" href="{{route('host.apartments.index')}}">
+                                                I tuoi annunci
+                                        </a>
+                                        <a class="dropdown-item" href="{{route('host.apartments.create')}}">
+                                                Inserisci appartamento
+                                        </a>
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                                onclick="event.preventDefault();
+                                                                            document.getElementById('logout-form-ham').submit();">
+                                                {{ __('Logout') }}
+                                        </a>
+                                        <form id="logout-form-ham" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                @csrf
+                                        </form>
+                                </div>
+                        </li>
+                        @endguest
+                </ul>
             </div>
         </nav>
         
         
-        <main class="py-4">
+        
+        
+        
+        
+        
+        
+        <main class="main-wrapper">
             @yield('content')   
         </main>
     </div>
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/app_navbar.js') }}"></script>
 
 </body>
 </html>

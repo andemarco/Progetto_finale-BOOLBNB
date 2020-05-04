@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -37319,6 +37319,55 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./resources/js/app_navbar.js":
+/*!************************************!*\
+  !*** ./resources/js/app_navbar.js ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+
+__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
+$(document).ready(function () {
+  // $(window).on('scroll', function() {
+  //   if ($(window).scrollTop() >= 20) {
+  //     $('#scroll_nav').addClass('shadow-sm');
+  //     $('#scroll_nav').addClass('fixed-top');
+  //   } else {
+  //     $('#scroll_nav').removeClass('shadow-sm');
+  //     $('#scroll_nav').removeClass('fixed-top');
+  //   }
+  // });
+  // click sul bottone a pagina grande
+  $('#auth-btn').click(function () {
+    var dropDown = $('.dropdown-menu-auth');
+
+    if (dropDown.hasClass('d-none')) {
+      dropDown.removeClass('d-none');
+    } else {
+      dropDown.addClass('d-none');
+    }
+  }); // click sull'hamburger menu
+
+  $('#ham-btn').click(function () {
+    console.log('suca');
+    var listContainer = $('.auth-list-ham');
+    var dropDown = $('.dropdown-menu-auth-ham');
+
+    if (listContainer.hasClass('d-none') && dropDown.hasClass('d-none')) {
+      listContainer.removeClass('d-none');
+      dropDown.removeClass('d-none');
+    } else {
+      listContainer.addClass('d-none');
+      dropDown.addClass('d-none');
+    }
+  });
+});
+
+/***/ }),
+
 /***/ "./resources/js/bootstrap.js":
 /*!***********************************!*\
   !*** ./resources/js/bootstrap.js ***!
@@ -37364,49 +37413,14 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/js/toggle.js":
-/*!********************************!*\
-  !*** ./resources/js/toggle.js ***!
-  \********************************/
+/***/ 6:
+/*!******************************************!*\
+  !*** multi ./resources/js/app_navbar.js ***!
+  \******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-
-__webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
-
-$(document).ready(function () {
-  $('.faq').click(function () {
-    $('.ask').hide();
-    $(this).siblings('.ask').slideToggle();
-  }); // NUMERICI EFFECT
-
-  $('.count').each(function () {
-    $(this).prop('Counter', 0).animate({
-      Counter: $(this).text()
-    }, {
-      duration: 3000,
-      easing: 'swing',
-      step: function step(now) {
-        $(this).text(Math.ceil(now));
-      }
-    });
-  });
-  $('.fa-arrow-alt-circle-down').click(function () {
-    $('.box-create-edit').slideToggle(1200);
-  });
-});
-
-/***/ }),
-
-/***/ 5:
-/*!**************************************!*\
-  !*** multi ./resources/js/toggle.js ***!
-  \**************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! /Users/andrebot/Desktop/Boolean/boolbnb-team6/resources/js/toggle.js */"./resources/js/toggle.js");
+module.exports = __webpack_require__(/*! /Users/andrebot/Desktop/Boolean/boolbnb-team6/resources/js/app_navbar.js */"./resources/js/app_navbar.js");
 
 
 /***/ })
