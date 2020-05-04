@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container-show-apt">
+<div class="container-show-apt text-center">
   @if (session('message'))
   <div class="alert alert-success">
     Hai inviato correttamente il messaggio.
@@ -12,6 +12,9 @@
   </div>
   <h1>{{$apartment->title}}</h1>
   <p>Posizione: {{$apartment->address}}</p>
+  <div class="show-container-map">
+    <img src="" class="map" alt="">
+  </div>
   <h3>Descrizione: {{$apartment->description}}</h3>
   <div class="container-show-info">
     <div class="p-info-box">

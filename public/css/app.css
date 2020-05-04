@@ -10884,6 +10884,7 @@ a.text-dark:focus {
 
 body {
   font-family: "Sen", sans-serif;
+  min-width: 370px;
 }
 
 body:hover {
@@ -11939,15 +11940,29 @@ hr {
 
 .container-show-apt .container-show-image {
   width: 80%;
+  margin: 0 auto;
+  padding-top: 30px;
 }
 
 .container-show-apt .container-show-image img {
   border-radius: 25px;
-  height: 100%;
+  width: 100%;
+}
+
+.container-show-apt .show-container-map {
+  margin: auto;
+  width: 30%;
+}
+
+.container-show-apt .show-container-map .map {
+  width: 100%;
+  border-radius: 25px;
+  padding-bottom: 20px;
 }
 
 .container-show-apt .container-show-info {
   display: flex;
+  justify-content: center;
 }
 
 .container-show-apt .container-show-info .p-info-box {
@@ -11998,21 +12013,13 @@ hr {
   .container-show-info {
     flex-direction: row;
   }
-
-  .container-show-image {
-    height: 480px;
-  }
 }
 
 @media (max-width: 576px) {
   .container-show-info {
     flex-direction: column;
-    width: 200px;
-  }
-
-  .container-show-image {
-    height: 250px;
     margin: auto;
+    width: 200px;
   }
 }
 
@@ -12096,6 +12103,9 @@ nav {
 nav .nav-left {
   width: 60%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background-color: #F7F7F7;
 }
 
@@ -12183,5 +12193,9 @@ nav .nav-right .auth-list-ham .dropdown-list-auth-ham .dropdown-menu-auth-ham {
   border-radius: 25px;
   width: 250px;
   background-color: #e84e4e;
+}
+
+nav .nav-line {
+  line-height: 0;
 }
 

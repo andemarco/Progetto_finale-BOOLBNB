@@ -15,8 +15,8 @@
         <p>Indipendentemente dal tipo di alloggio o stanza che vuoi condividere, Boolbnb rende semplice e sicuro ospitare dei viaggiatori. Spetta a te il controllo completo della disponibilità, dei prezzi, delle regole della casa e della modalità di interazione con gli ospiti.</p>
       </div>
       <div class="rent">
-        <h3>Perchè affittare su Boolbnb?</h3>
-        <p>Indipendentemente dal tipo di alloggio o stanza che vuoi condividere, Boolbnb rende semplice e sicuro ospitare dei viaggiatori. Spetta a te il controllo completo della disponibilità, dei prezzi, delle regole della casa e della modalità di interazione con gli ospiti.</p>
+        <h3>Con noi sei al sicuro</h3>
+        <p>Per tenere al sicuro te, il tuo alloggio e le tue cose, tuteliamo ogni prenotazione con una protezione in caso di danni alla casa di 1.000.000 € e con un'altra assicurazione di pari valore contro gli incidenti.</p>
       </div>
     </div>
     <hr>
@@ -35,15 +35,15 @@
         <div class="icon-box">
           <i class="far fa-check-circle"></i>
         </div>
-        <h3>Pubblica il tuo annuncio gratuitamente</h3>
-        <p>Pubblica qualsiasi alloggio senza addebiti di registrazione, da un salotto condiviso a una seconda casa e a tutto quello che c'è nel mezzo.</p>
+        <h3>Stabilisci come vuoi affittare</h3>
+        <p>Scegli le date, i prezzi e i requisiti per gli ospiti. Siamo sempre a disposizione per aiutarti. Utilizza il nostro supporto dedicato 24h su 24h.</p>
       </div>
       <div class="box-check">
         <div class="icon-box">
           <i class="far fa-check-circle"></i>
         </div>
-        <h3>Pubblica il tuo annuncio gratuitamente</h3>
-        <p>Pubblica qualsiasi alloggio senza addebiti di registrazione, da un salotto condiviso a una seconda casa e a tutto quello che c'è nel mezzo.</p>
+        <h3>Accogli il tuo primo ospite</h3>
+        <p>Una volta che il tuo annuncio viene pubblicato, gli ospiti idonei potranno contattarti. Puoi inviare loro delle domande prima del soggiorno.</p>
       </div>
     </div>
 {{-- FORM -----------------> --}}

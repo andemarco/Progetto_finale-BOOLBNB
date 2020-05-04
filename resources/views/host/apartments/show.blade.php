@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container-show-apt">
+<div class="container-show-apt text-center">
     <div class="container-show-image">
       <img src="{{asset('storage/' . $apartment->image_path)}}" height="480px" width="640px" alt="">
     </div>

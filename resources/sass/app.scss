@@ -13,6 +13,7 @@
 //Hover
 body{
     font-family: 'Sen', sans-serif;
+    min-width: 370px;
 }
 
 body:hover {
@@ -1001,14 +1002,26 @@ hr {
      }
      .container-show-image {
          width: 80%;
+         margin: 0 auto;
+         padding-top: 30px;
          img {
          border-radius: 25px;
-         height: 100%;
+         width: 100%;
          
          }
      }
+     .show-container-map {
+        margin: auto;
+        width: 30%;
+        .map {
+            width: 100%;
+            border-radius: 25px;
+        padding-bottom: 20px;
+        }
+     }
      .container-show-info {
          display: flex;
+         justify-content: center;
          .p-info-box {
             height: 30px;
             border-radius: 25px;
@@ -1054,20 +1067,15 @@ hr {
     .container-show-info {
         flex-direction: row;
     }
-    .container-show-image {
-        height: 480px;
-     }  
+    
 }
 
 @media(max-width: 576px) { 
     .container-show-info {
         flex-direction: column;
+        margin: auto;
         width: 200px;
     }
-    .container-show-image {
-        height: 250px;
-        margin: auto;
-     }  
 }
  .alert-success {
      border-radius: 25px;
@@ -1141,6 +1149,9 @@ nav {
   .nav-left {
     width: 60%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background-color: #F7F7F7;
     .main-logo {
       height: 50px;
@@ -1207,6 +1218,9 @@ nav {
           }
       }
     }
+  }
+  .nav-line {
+      line-height: 0;
   }
 }
 

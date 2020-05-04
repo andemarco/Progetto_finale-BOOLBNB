@@ -1,5 +1,16 @@
 @extends('layouts.app')
 @section('content')
+  @if ($apartments->isEmpty())
+  <section id="announce" style="background-image: url('storage/images/ImmagineAnnuncio1.jpg');">
+    <div class="container-announce">
+      <div class="announce-title">
+        <h2>Non sei ancora un host? <br>Pubblica il tuo annuncio ed entra a far parte del mondo BoolBnb</h2>
+      </div>
+      <div class="btn btn-info button-announce"><a href="{{route('host.apartments.create')}}">Pubblica!</a>
+      </div>
+    </div>
+  </section>
+  @else
   <div class="jumbotron" style="background-image: url('https://st3.idealista.it/news/archivie/2019-08/casa_malaga_fachada.jpg?sv=dFqJvXT7');">
     <section id='city-search'>
       <div class="content">
@@ -11,17 +22,6 @@
       </div>
     </section>
   </div>
-  @if ($apartments->isEmpty())
-  <section id="announce" style="background-image: url('storage/images/ImmagineAnnuncio1.jpg');">
-    <div class="container-announce">
-      <div class="announce-title">
-        <h2>Non sei ancora un host? <br>Pubblica il tuo annuncio ed entra a far parte del mondo BoolBnb</h2>
-      </div>
-      <div class="btn btn-info button-announce">Pubblica!
-      </div>
-    </div>
-  </section>
-  @else
   <div class="">
     <section id="host_apartments">
       <h2>I tuoi annunci</h2>
