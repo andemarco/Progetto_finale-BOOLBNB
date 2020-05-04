@@ -27,9 +27,9 @@
 {{-- carousel with 3 elements for lg display --}}
       <div class="box-apt large-carousel">
         <div class="box-container">
-          <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+          {{-- <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
             <i class="fas fa-angle-left"></i>
-          </a>
+          </a> --}}
             <div id="carousel" class="carousel slide" data-ride="carousel">
               <div class="carousel-inner">
                 @foreach ($sponsorized_apts->chunk(3) as $sponsorized_apt)
@@ -55,9 +55,9 @@
                 @endforeach
               </div>
           </div>
-          <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+          {{-- <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
             <i class="fas fa-angle-right"></i>
-          </a>
+          </a> --}}
         </div>
       </div>  
 {{-- end of carousel with 3 elements for lg display --}}

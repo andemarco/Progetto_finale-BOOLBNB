@@ -24,7 +24,7 @@
     <div id="app">
         <nav>
             <div class="nav-left">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="" href="{{ url('/') }}">
                     {{ config('app.name', 'Boolbnb') }}
                     <img class="main-logo" src="{{asset('storage/images/LogoCorretto.png')}}" alt="">
                 </a>
@@ -70,17 +70,19 @@
                 </ul>
                 <ul class="auth-list-ham d-none">
                         <!-- Authentication Links -->
+                        <li class="nav-item dropdown-list-auth-ham">
                         @guest
-                                <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
+                        <div class="dropdown-menu-auth-ham d-none">
+                                
+                                        <a class="dropdown-item" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                
                                 @if (Route::has('register'))
-                                        <li class="nav-item">
-                                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                        </li>
+                                        
+                                                <a class="dropdown-item" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                        </div>
                                 @endif
                         @else
-                        <li class="nav-item dropdown-list-auth-ham">
+                        
                                     {{-- <a id="auth-btn-ham" href="#">
                                         {{ Auth::user()->name }} <span class="caret"></span>
                                     </a> --}}
@@ -100,8 +102,8 @@
                                                 @csrf
                                         </form>
                                 </div>
+                                @endguest
                         </li>
-                        @endguest
                 </ul>
             </div>
         </nav>

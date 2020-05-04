@@ -12147,6 +12147,7 @@ nav .nav-right .dropdown-list-auth .dropdown-menu-auth {
   padding: 20px;
   -webkit-filter: drop-shadow(2px 2px 2px rgba(199, 199, 199, 0.81));
           filter: drop-shadow(2px 2px 2px rgba(199, 199, 199, 0.81));
+  border-radius: 25px;
   width: 250px;
   background-color: #e84e4e;
 }
@@ -12179,6 +12180,7 @@ nav .nav-right .auth-list-ham .dropdown-list-auth-ham .dropdown-menu-auth-ham {
   padding: 20px;
   -webkit-filter: drop-shadow(2px 2px 2px rgba(199, 199, 199, 0.81));
           filter: drop-shadow(2px 2px 2px rgba(199, 199, 199, 0.81));
+  border-radius: 25px;
   width: 250px;
   background-color: #e84e4e;
 }

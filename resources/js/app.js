@@ -60,7 +60,10 @@ $(document).ready(function() {
     if (e.key === "Escape") {
       $('.chart-container').fadeOut();
     }
-});
+  });
+  $('.carousel').carousel({ 
+    interval: 10000, cycle: 'circular' 
+  });
 });
 
 
