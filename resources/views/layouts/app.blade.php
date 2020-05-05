@@ -39,33 +39,31 @@
                 </a>
             </div>
             <div class="nav-right">
-                <button id="ham-btn" type="button">
-                    <i class="fas fa-bars"></i>
-                </button>
+                    <i id="ham-btn" class="fas fa-bars"></i>
                 <ul class="auth-list">
                         <!-- Authentication Links -->
                         @guest
                                 <li class="nav-item">
-                                        <a class="nav-link nav-line" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                        <a class="text-danger ml-5" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
                                 @if (Route::has('register'))
                                         <li class="nav-item">
-                                                <a class="nav-link nav-line" href="{{ route('register') }}">{{ __('Registrati') }}</a>
+                                                <a class="text-danger ml-5" href="{{ route('register') }}">{{ __('Registrati') }}</a>
                                         </li>
                                 @endif
                         @else
                         <li class="nav-item dropdown-list-auth">
-                                    <a id="auth-btn" href="#">
+                                    <a id="auth-btn" class="text-danger" href="#">
                                         {{ Auth::user()->name }} <span class="caret"></span>
                                     </a>
                                 <div class="dropdown-menu-auth d-none">
-                                        <a class="dropdown-item" href="{{route('host.apartments.index')}}">
+                                        <a class="dropdown-effect" href="{{route('host.apartments.index')}}">
                                                 I tuoi annunci
                                         </a>
-                                        <a class="dropdown-item" href="{{route('host.apartments.create')}}">
+                                        <a class="dropdown-effect" href="{{route('host.apartments.create')}}">
                                                 Inserisci appartamento
                                         </a>
-                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                        <a class="dropdown-effect" href="{{ route('logout') }}"
                                                 onclick="event.preventDefault();
                                                                             document.getElementById('logout-form').submit();">
                                                 {{ __('Logout') }}
@@ -83,11 +81,11 @@
                         @guest
                         <div class="dropdown-menu-auth-ham d-none">
                                 
-                                        <a class="dropdown-item" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                        <a class="dropdown-effect" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 
                                 @if (Route::has('register'))
                                         
-                                                <a class="dropdown-item" href="{{ route('register') }}">{{ __('Registrati') }}</a>
+                                                <a class="dropdown-effect" href="{{ route('register') }}">{{ __('Registrati') }}</a>
                                         </div>
                                 @endif
                         @else
@@ -96,13 +94,13 @@
                                         {{ Auth::user()->name }} <span class="caret"></span>
                                     </a> --}}
                                 <div class="dropdown-menu-auth-ham d-none">
-                                        <a class="dropdown-item" href="{{route('host.apartments.index')}}">
+                                        <a class="dropdown-effect" href="{{route('host.apartments.index')}}">
                                                 I tuoi annunci
                                         </a>
-                                        <a class="dropdown-item" href="{{route('host.apartments.create')}}">
+                                        <a class="dropdown-effect" href="{{route('host.apartments.create')}}">
                                                 Inserisci appartamento
                                         </a>
-                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                        <a class="dropdown-effect" href="{{ route('logout') }}"
                                                 onclick="event.preventDefault();
                                                                             document.getElementById('logout-form-ham').submit();">
                                                 {{ __('Logout') }}

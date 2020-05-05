@@ -20,6 +20,14 @@ body:hover {
     cursor: default;
 }
 
+.container-title {
+    h1 {
+        font-size: 50px;
+        font-weight: bold;
+        text-align: center;
+    }    
+}
+
 #btn-search:active,
 #btn-search:hover {
     color: #E58788;;
@@ -57,17 +65,6 @@ body{
     overflow-x: hidden;
 }
 
-// .navbar {
-//     // width: 100%;
-//     // position: fixed;
-//     // display: flex;
-//     // top:0;
-//     // left: 0;
-//     // z-index: 1010;
-//     // .container {
-//     //     width: 100%;
-//     // }
-// }
 .main-wrapper {
     margin-top: 60px;
 }
@@ -133,14 +130,6 @@ body{
     margin-bottom: 0;
 }
 
-.container-title {
-    h1 {
-        font-size: 50px;
-        font-weight: bold;
-        text-align: center;
-    }    
-}
-
 .carousel-caption {
     background-color: rgba(0, 0, 0, 0.5);
     padding: 20px;
@@ -182,6 +171,9 @@ body{
     .slide-box {
         display: flex;
         justify-content: space-between;
+        a {
+            text-decoration: none;
+        }
         .single-apt {
             display: flex;
             flex-direction: column;
@@ -191,7 +183,7 @@ body{
             margin: 10px;
             border-radius: 20px;
             transition: 0.3;
-            h5, p {
+            h5, p,  {
                 color: white;
             }
             .house-image {
@@ -605,9 +597,11 @@ body{
 //FINE LOGIN-PAGE/REGISTER PAGE
 
 //INDEX HOST
-.container-title {
+.container-title-host {
     h1 {
-        font-size: 30px;
+        font-size: 50px;
+        text-align: center;
+        color: black;
     }
 }
 #host_apartments {
@@ -763,16 +757,12 @@ body{
     align-items: center;
 }
 @mixin h1-jumbo {
-    font-size: 3em;
+    font-size: 4.3em;
     text-align: center;
     opacity: 85%;
-    color: white;
+    color: black;
 }
-@mixin border-text {
-    border: 1px solid white;
-    background-color: rgba(87, 80, 80, 0.2);
-    padding: 5px;
-}
+
 p{
     font-size: 17px;
 }
@@ -787,13 +777,11 @@ p{
     .box-jumbo-create{
         @include flex-center;
         padding-top: 250px;
-        .border-text {
-            @include border-text;
         h1{
             @include h1-jumbo;
         }
-      }
     }
+
 }
 // JUMBO-EDIT
 .jumbo-edit {
@@ -806,16 +794,14 @@ p{
     @include flex-center;
     .box-jumbo-edit {
         @include flex-center;
-        .border-text{
-            @include border-text;
             h1 {
                 @include h1-jumbo;
+                color: white;
             }
         }
-    }
 }
 .box-create-edit{
-    padding: 7%;
+    padding: 4%;
     display: flex;
     justify-content: center;
     .box-row{
@@ -1190,15 +1176,19 @@ nav {
           filter: drop-shadow(2px 2px 2px rgba(199, 199, 199, 0.81));
           border-radius: 25px;
           width: 250px;
-          background-color: #e84e4e;
+          background-color: white;
       }
     }
     #ham-btn {
       display: none;
+      color: #e84e4e;
+      font-size: 22px;
+      cursor: pointer;
       @media(max-width: 992px) {
         display: inline-block;
       }
     }
+
     .auth-list-ham {
       list-style: none;
        display: flex;
@@ -1214,15 +1204,30 @@ nav {
               filter: drop-shadow(2px 2px 2px rgba(199, 199, 199, 0.81));
               border-radius: 25px;
               width: 250px;
-              background-color: #e84e4e;
+              background-color: white;
           }
       }
     }
   }
-  .nav-line {
-      line-height: 0;
-  }
+}
+.dropdown-effect {
+    display: block;
+    width: 100%;
+    padding: 0.25rem 1.5rem;
+    clear: both;
+    font-weight: 400;
+    color: #212529;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+    
 }
 
+.dropdown-effect:hover {
+    color: #E58788;
+    text-decoration: none;
+    
+}
 
 

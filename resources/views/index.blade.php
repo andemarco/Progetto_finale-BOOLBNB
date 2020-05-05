@@ -72,7 +72,7 @@
           </div>
         </div>
       </div>
-  </script>
+    </script>
   <script src="{{asset('js/app_search2.js')}}"></script>
   <script src="{{asset('js/app.js')}}"></script>
 </div>

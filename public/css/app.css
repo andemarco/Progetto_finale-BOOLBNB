@@ -10891,6 +10891,12 @@ body:hover {
   cursor: default;
 }
 
+.container-title h1 {
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+}
+
 #btn-search:active,
 #btn-search:hover {
   color: #E58788;
@@ -10992,12 +10998,6 @@ body {
   margin-bottom: 0;
 }
 
-.container-title h1 {
-  font-size: 50px;
-  font-weight: bold;
-  text-align: center;
-}
-
 .carousel-caption {
   background-color: rgba(0, 0, 0, 0.5);
   padding: 20px;
@@ -11045,6 +11045,10 @@ body {
 .box-container .slide-box {
   display: flex;
   justify-content: space-between;
+}
+
+.box-container .slide-box a {
+  text-decoration: none;
 }
 
 .box-container .slide-box .single-apt {
@@ -11498,8 +11502,10 @@ body {
   }
 }
 
-.container-title h1 {
-  font-size: 30px;
+.container-title-host h1 {
+  font-size: 50px;
+  text-align: center;
+  color: black;
 }
 
 #host_apartments {
@@ -11682,17 +11688,11 @@ p {
   padding-top: 250px;
 }
 
-.jumbo-create .box-jumbo-create .border-text {
-  border: 1px solid white;
-  background-color: rgba(87, 80, 80, 0.2);
-  padding: 5px;
-}
-
-.jumbo-create .box-jumbo-create .border-text h1 {
-  font-size: 3em;
+.jumbo-create .box-jumbo-create h1 {
+  font-size: 4.3em;
   text-align: center;
   opacity: 85%;
-  color: white;
+  color: black;
 }
 
 .jumbo-edit {
@@ -11713,21 +11713,16 @@ p {
   align-items: center;
 }
 
-.jumbo-edit .box-jumbo-edit .border-text {
-  border: 1px solid white;
-  background-color: rgba(87, 80, 80, 0.2);
-  padding: 5px;
-}
-
-.jumbo-edit .box-jumbo-edit .border-text h1 {
-  font-size: 3em;
+.jumbo-edit .box-jumbo-edit h1 {
+  font-size: 4.3em;
   text-align: center;
   opacity: 85%;
+  color: black;
   color: white;
 }
 
 .box-create-edit {
-  padding: 7%;
+  padding: 4%;
   display: flex;
   justify-content: center;
 }
@@ -12159,11 +12154,14 @@ nav .nav-right .dropdown-list-auth .dropdown-menu-auth {
           filter: drop-shadow(2px 2px 2px rgba(199, 199, 199, 0.81));
   border-radius: 25px;
   width: 250px;
-  background-color: #e84e4e;
+  background-color: white;
 }
 
 nav .nav-right #ham-btn {
   display: none;
+  color: #e84e4e;
+  font-size: 22px;
+  cursor: pointer;
 }
 
 @media (max-width: 992px) {
@@ -12192,10 +12190,24 @@ nav .nav-right .auth-list-ham .dropdown-list-auth-ham .dropdown-menu-auth-ham {
           filter: drop-shadow(2px 2px 2px rgba(199, 199, 199, 0.81));
   border-radius: 25px;
   width: 250px;
-  background-color: #e84e4e;
+  background-color: white;
 }
 
-nav .nav-line {
-  line-height: 0;
+.dropdown-effect {
+  display: block;
+  width: 100%;
+  padding: 0.25rem 1.5rem;
+  clear: both;
+  font-weight: 400;
+  color: #212529;
+  text-align: inherit;
+  white-space: nowrap;
+  background-color: transparent;
+  border: 0;
+}
+
+.dropdown-effect:hover {
+  color: #E58788;
+  text-decoration: none;
 }
 

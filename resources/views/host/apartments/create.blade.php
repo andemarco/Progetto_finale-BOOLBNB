@@ -9,7 +9,7 @@
         </div>
       </div>
     </div>
-    <div class="box-rent">
+    <div class="box-rent text-center">
       <div class="rent">
         <h3>Perchè affittare su Boolbnb?</h3>
         <p>Indipendentemente dal tipo di alloggio o stanza che vuoi condividere, Boolbnb rende semplice e sicuro ospitare dei viaggiatori. Spetta a te il controllo completo della disponibilità, dei prezzi, delle regole della casa e della modalità di interazione con gli ospiti.</p>
@@ -23,7 +23,7 @@
     <div class="steps-text">
       <h1>Ospitare in 3 passaggi</h1>
     </div>
-    <div class="box-steps">
+    <div class="box-steps text-center">
       <div class="box-check">
         <div class="icon-box">
           <i class="far fa-check-circle"></i>
@@ -77,7 +77,7 @@
         {{-- FLEX SERVICE --}}
       <div class="services-box-create">
         <div class="form-group flex-column">
-          <label for="number_of_rooms">Numeri di stanze</label>
+          <label for="number_of_rooms">Camere</label>
           <input class="form-control input-text  @error('number_of_rooms') is-invalid @enderror" type="text" name="number_of_rooms" min="1" value="1">
           @error('number_of_rooms')
               <span class="invalid-feedback" role="alert">
@@ -86,7 +86,7 @@
           @enderror
         </div>
         <div class="form-group flex-column">
-          <label for="number_of_bath">Numeri di bagni</label>
+          <label for="number_of_bath">Bagni</label>
           <input class="form-control input-text @error('number_of_bath') is-invalid @enderror" type="text" name="number_of_bath" min="1" value="1">
           @error('number_of_bath')
               <span class="invalid-feedback" role="alert">
@@ -95,7 +95,7 @@
           @enderror
         </div>
         <div class="form-group flex-column">
-          <label for="number_of_beds">Numeri di letti</label>
+          <label for="number_of_beds">Letti</label>
           <input class="form-control input-text @error('number_of_beds') is-invalid @enderror" type="text" name="number_of_beds" min="1" value="1">
           @error('number_of_beds')
               <span class="invalid-feedback" role="alert">
@@ -104,7 +104,7 @@
           @enderror
         </div>
         <div class="form-group flex-column">
-          <label for="meters">Metri</label>
+          <label for="meters">Metratura</label>
           <input class="form-control input-text @error('meters') is-invalid @enderror" type="text" name="meters">
           @error('meters')
               <span class="invalid-feedback" role="alert">
@@ -114,7 +114,7 @@
         </div>
       </div>
         <div class="form-group">
-          <label for="address">Via</label>
+          <label for="address">Indirizzo</label>
           <input id="address" class="form-control @error('address') is-invalid @enderror" type="text" name="address">
           @error('address')
               <span class="invalid-feedback" role="alert">
@@ -144,12 +144,12 @@
         </div>
         <div class="input-group mb-3 box-publish">
           <div class="input-group-prepend">
-            <label class="input-group-text" for="published">Options</label>
+            <label class="input-group-text" for="published">Opzioni</label>
           </div>
           <select class="custom-select" id="inputGroupSelect01" name="published">
             <option selected>Scegli</option>
-            <option value="0">Non Pubblicato</option>
-            <option value="1">Pubblica</option>
+            <option value="0">Non pubblicare l'appartamento</option>
+            <option value="1">Pubblica l'appartamento</option>
           </select>
         </div>
         {{-- SERVICES --}}

@@ -15,7 +15,7 @@
   <div class="show-container-map">
     <img src="" class="map" alt="">
   </div>
-  <h3>Descrizione: {{$apartment->description}}</h3>
+  <h4>Descrizione: {{$apartment->description}}</h4>
   <div class="container-show-info">
     <div class="p-info-box">
       <p>Camere: {{$apartment->number_of_rooms}}</p>

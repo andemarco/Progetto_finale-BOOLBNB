@@ -11,12 +11,12 @@
     </div>
   </section>
   @else
-  <div class="jumbotron" style="background-image: url('https://st3.idealista.it/news/archivie/2019-08/casa_malaga_fachada.jpg?sv=dFqJvXT7');">
+  <div class="jumbotron index-jumbo" style="background-image: url('storage/images/immagineCreate.jpg'); background-position: bottom">
     <section id='city-search'>
       <div class="content">
         <div class="form" id="form-copy">
-          <div class="container-title">
-            <h1>Monitora, modifica e sponsorizza i tuoi appartamenti.</h1>
+          <div class="container-title-host">
+            <h1>Monitora, modifica e sponsorizza i tuoi appartamenti</h1>
           </div>
         </div>
       </div>

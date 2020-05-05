@@ -7,7 +7,7 @@
     </div>
     <h1>{{$apartment->title}}</h1>
     <p>Posizione: {{$apartment->address}}</p>
-    <h3>Descrizione: {{$apartment->description}}</h3>
+    <h4>Descrizione: {{$apartment->description}}</h4>
     <div class="container-show-info">
       <div class="p-info-box">
         <p>Camere: {{$apartment->number_of_rooms}}</p>

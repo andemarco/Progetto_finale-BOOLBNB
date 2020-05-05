@@ -38,16 +38,17 @@
                     @foreach ($sponsorized_apt as $item)
                   <div>
                     <div class="slide-box">
-                      <div class="single-apt" id="apt1">
-                        <div class="apt-image">
-                        <img class="house-image" src="{{asset('storage/' . $item->image_path)}}" alt="{{$item->title}}">
-                        </div>
-                        <div class="apt-info p-3">
-                          <h5> <a href="{{route('host.apartments.sponsor', $item->title)}}">{{ $item->title }}</a></h5>
-                          <p>{{ $item->address }}</p>
+                      <a href="{{route('show', $item->id)}}">
+                        <div class="single-apt" id="apt1">
+                          <div class="apt-image">
+                          <img class="house-image" src="{{asset('storage/' . $item->image_path)}}" alt="{{$item->title}}">
+                          </div>
+                          <div class="apt-info p-3">
+                            <h5>{{ $item->title }}</h5>
                         </div> 
                       </div>
-                      </div>
+                      </a>
+                    </div>
                   </div>
                   @endforeach
                   </div>
@@ -75,16 +76,17 @@
                     @foreach ($sponsorized_apt as $item)
                   <div>
                     <div class="slide-box">
-                      <div class="single-apt" id="apt1">
-                        <div class="apt-image">
-                        <img class="house-image" src="{{asset('storage/' . $item->image_path)}}" alt="{{$item->title}}">
+                      <a href="{{route('show', $item->id)}}">
+                        <div class="single-apt" id="apt1">
+                          <div class="apt-image">
+                            <img class="house-image" src="{{asset('storage/' . $item->image_path)}}" alt="{{$item->title}}">
+                          </div>
+                          <div class="apt-info p-3">
+                            <h5> {{ $item->title }}</h5>
+                          </div> 
                         </div>
-                        <div class="apt-info p-3">
-                          <h5>{{ $item->title }}</h5>
-                          <p>{{ $item->address }}</p>
-                        </div> 
-                      </div>
-                      </div>
+                      </a>
+                    </div>
                   </div>
                   @endforeach
                   </div>
@@ -112,16 +114,17 @@
                     @foreach ($sponsorized_apt as $item)
                   <div>
                     <div class="slide-box">
-                      <div class="single-apt" id="apt1">
-                        <div class="apt-image">
-                        <img class="house-image" src="{{asset('storage/' . $item->image_path)}}" alt="{{$item->title}}">
+                      <a href="{{route('show', $item->id)}}">
+                        <div class="single-apt" id="apt1">
+                          <div class="apt-image">
+                            <img class="house-image" src="{{asset('storage/' . $item->image_path)}}" alt="{{$item->title}}">
+                          </div>
+                          <div class="apt-info p-3">
+                            <h5> {{ $item->title }}</h5>
+                          </div> 
                         </div>
-                        <div class="apt-info p-3">
-                          <h5>{{ $item->title }}</h5>
-                          <p>{{ $item->address }}</p>
-                        </div> 
-                      </div>
-                      </div>
+                      </a>
+                    </div>
                   </div>
                   @endforeach
                   </div>

@@ -79,7 +79,7 @@ function query(queryString) {
 
 function searchApartments(address) {
   $.ajax({
-    url: 'https://api.tomtom.com/search/2/geocode/' + address + '.json?limit=1&countrySet=IT&key=T5RJjkTNh0XzCCh2P0vgAYziedXCFFWF',
+    url: 'https://api.tomtom.com/search/2/geocode/' + address + '.json?limit=1&key=T5RJjkTNh0XzCCh2P0vgAYziedXCFFWF',
     method: 'GET',
     success: function (data, state) {
       var thisAddress = data.results;
@@ -177,4 +177,5 @@ function filterFor(data) {
 
     }
   });
+  
 }

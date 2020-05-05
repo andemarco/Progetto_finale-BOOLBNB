@@ -60,11 +60,11 @@
         </div>
         <div class="input-group mb-3 box-publish">
           <div class="input-group-prepend">
-            <label class="input-group-text" for="published">Options</label>
+            <label class="input-group-text" for="published">Opzioni</label>
           </div>
           <select class="custom-select" id="inputGroupSelect01" name="published">
-            <option value="0" {{ ($apartment->published == 0) ? 'selected' : '' }}>Non Pubblicato</option>
-            <option value="1" {{ ($apartment->published == 1) ? 'selected' : '' }}>Pubblicato</option>
+            <option value="0" {{ ($apartment->published == 0) ? 'selected' : '' }}>Non pubblicare l'appartamento</option>
+            <option value="1" {{ ($apartment->published == 1) ? 'selected' : '' }}>Pubblica l'appartamento</option>
           </select>
         </div>
         {{-- Services --}}
