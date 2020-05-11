@@ -42493,7 +42493,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/andrebot/Desktop/Boolean/boolbnb-team6/resources/js/app_search.js */"./resources/js/app_search.js");
+module.exports = __webpack_require__(/*! /Users/andreademarco/Desktop/BOOLEAN/Progetto_finale/resources/js/app_search.js */"./resources/js/app_search.js");
 
 
 /***/ })

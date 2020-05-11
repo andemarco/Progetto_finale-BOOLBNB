@@ -37406,7 +37406,7 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/andrebot/Desktop/Boolean/boolbnb-team6/resources/js/toggle.js */"./resources/js/toggle.js");
+module.exports = __webpack_require__(/*! /Users/andreademarco/Desktop/BOOLEAN/Progetto_finale/resources/js/toggle.js */"./resources/js/toggle.js");
 
 
 /***/ })

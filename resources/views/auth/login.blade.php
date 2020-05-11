@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="image" style="background-image: url('storage/images/LoginPage.png')">
+<div class="image" style="background-image: url('storage/images/ImmagineBack.jpg')">
     <div class="container">
     <div class="row justify-content-center">
         <div class="col-lg-8 col-md-10">

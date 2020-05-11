@@ -25,7 +25,7 @@ body:hover {
         font-size: 50px;
         font-weight: bold;
         text-align: center;
-    }    
+    }
 }
 
 #btn-search:active,
@@ -53,7 +53,7 @@ body:hover {
     position: static;
     width: 50px;
     margin-left: 5px;
-    margin-right: 5px;  
+    margin-right: 5px;
 }
 //CONTENT
 body{
@@ -153,7 +153,7 @@ body{
     border-radius: 0;
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;padding-left: 10px;
-    font-size: 18px;   
+    font-size: 18px;
 }
 .box-apt {
     width: 100%;
@@ -192,7 +192,7 @@ body{
                 height: 230px;
                 width: 240px;
             }
-        }   
+        }
     }
 
     .single-apt:active,
@@ -292,7 +292,7 @@ body{
             a {
                 text-decoration: none;
                 color:#E58788;
-            } 
+            }
         }
     }
 }
@@ -319,7 +319,7 @@ body{
             height: 200px;
             width: 220px;
         }
-    } 
+    }
 }
 //FINE WELCOME-PAGE
 
@@ -368,8 +368,8 @@ body{
     border: 2px solid #e58788;
     outline: none;
 }
-  
-  
+
+
 .btn-family {
     border-radius: 25px;
     background-color: #E84E4E;
@@ -407,7 +407,7 @@ body{
     border-radius: 0;
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;padding-left: 10px;
-    font-size: 18px;   
+    font-size: 18px;
 }
 
 .container-group {
@@ -426,7 +426,7 @@ body{
         height: 50px;
         line-height: 45px;
         font-size: 18px;
-        
+
     }
 }
 
@@ -456,7 +456,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.85);
     padding-bottom: 20px;
     padding-left: 10px;
     padding-right: 10px;
@@ -560,7 +560,7 @@ body{
                 padding-bottom: 5px;
                 color: black;
                 font-weight: bold;
-                transition: 0.3s; 
+                transition: 0.3s;
             }
             a:hover {
                 transition: 0.3s;
@@ -576,7 +576,7 @@ body{
                 font-size: 19px;
             }
         }
-        
+
     }
 }
 @media (max-width: 992px) {
@@ -729,7 +729,7 @@ body{
             padding-bottom: 20px;
             border-bottom: 1px solid lightgray;
             .ask {
-               display: none; 
+               display: none;
             }
             .faq{
                 color: lightseagreen;
@@ -818,7 +818,7 @@ p{
             display: flex;
             flex-direction: row;
             .checkbox-services{
-                margin: 5px; 
+                margin: 5px;
             }
         }
     }
@@ -852,7 +852,7 @@ p{
         padding: 50px;
     }
 }
-// QUESTION 
+// QUESTION
 .box-question {
     margin-top: 50px;
     .question {
@@ -922,7 +922,7 @@ hr {
         }
     }
 }
-// button edit 
+// button edit
 .box-publish {
     display: flex;
     flex-direction: row;
@@ -948,9 +948,9 @@ hr {
         color: #E58788;
     }
 }
-// /button edit 
+// /button edit
 // ---------- /LUCA
-//  FINE CREATE-EDIT 
+//  FINE CREATE-EDIT
 
 //SPONSOR PAGE
 #sponsor-container {
@@ -993,7 +993,7 @@ hr {
          img {
          border-radius: 25px;
          width: 100%;
-         
+
          }
      }
      .show-container-map {
@@ -1019,7 +1019,7 @@ hr {
             margin-right: 15px;
             border: 1px solid #e84e4e;
             margin-top: 20px;
-         } 
+         }
      }
      .p-price {
          font-weight: bold;
@@ -1049,14 +1049,14 @@ hr {
     }
  }
 
- @media(min-width: 576px) { 
+ @media(min-width: 576px) {
     .container-show-info {
         flex-direction: row;
     }
-    
+
 }
 
-@media(max-width: 576px) { 
+@media(max-width: 576px) {
     .container-show-info {
         flex-direction: column;
         margin: auto;
@@ -1139,8 +1139,9 @@ nav {
     flex-direction: column;
     justify-content: center;
     background-color: #F7F7F7;
+    overflow: hidden;
     .main-logo {
-      height: 50px;
+      height: 70px;
     }
   }
   .nav-right {
@@ -1221,13 +1222,11 @@ nav {
     white-space: nowrap;
     background-color: transparent;
     border: 0;
-    
+
 }
 
 .dropdown-effect:hover {
     color: #E58788;
     text-decoration: none;
-    
+
 }
-
-

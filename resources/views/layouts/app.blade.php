@@ -15,7 +15,7 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    
+
     <div>{{ config('app.name', '') }}</div>
 
     <!-- Scripts -->
@@ -34,7 +34,6 @@
         <nav>
             <div class="nav-left">
                 <a class="" href="{{ url('/') }}">
-                    {{ config('app.name', 'Boolbnb') }}
                     <img class="main-logo" src="{{asset('storage/images/LogoCorretto.png')}}" alt="">
                 </a>
             </div>
@@ -80,16 +79,16 @@
                         <li class="nav-item dropdown-list-auth-ham">
                         @guest
                         <div class="dropdown-menu-auth-ham d-none">
-                                
+
                                         <a class="dropdown-effect" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                
+
                                 @if (Route::has('register'))
-                                        
+
                                                 <a class="dropdown-effect" href="{{ route('register') }}">{{ __('Registrati') }}</a>
                                         </div>
                                 @endif
                         @else
-                        
+
                                     {{-- <a id="auth-btn-ham" href="#">
                                         {{ Auth::user()->name }} <span class="caret"></span>
                                     </a> --}}
@@ -114,16 +113,16 @@
                 </ul>
             </div>
         </nav>
-        
-        
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
+
         <main class="main-wrapper">
-            @yield('content')   
+            @yield('content')
         </main>
     </div>
     <script src="{{ asset('js/app.js') }}"></script>

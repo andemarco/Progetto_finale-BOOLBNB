@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
   @if ($apartments->isEmpty())
-  <section id="announce" style="background-image: url('storage/images/ImmagineAnnuncio1.jpg');">
+  <section id="announce" style="background-image: url('storage/images/ImmagineBack.jpg');">
     <div class="container-announce">
       <div class="announce-title">
         <h2>Non sei ancora un host? <br>Pubblica il tuo annuncio ed entra a far parte del mondo BoolBnb</h2>
@@ -11,7 +11,7 @@
     </div>
   </section>
   @else
-  <div class="jumbotron index-jumbo" style="background-image: url('storage/images/immagineCreate.jpg'); background-position: bottom">
+  <div class="jumbotron index-jumbo" style="background-image: url('storage/images/ImmagineBack.jpg'); background-position: center">
     <section id='city-search'>
       <div class="content">
         <div class="form" id="form-copy">
@@ -138,4 +138,3 @@
     {{-- <script src="{{asset('js/app.js')}}"></script>     --}}
     <script src="{{asset('js/toggle.js')}}"></script>
 @endsection
-
