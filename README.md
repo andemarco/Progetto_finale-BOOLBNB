@@ -1,3 +1,11 @@
+<h1 align="center">BOOLBNB - Progetto Finale</h1>
+<h2 align="center">Progetto finale ispirato ad AirBnb che permette di registrarsi al sito, ricercare appartamenti, inserire appartamenti, filtrare i risultati e sponsorizzare gli annunci</h2>
+
+
+
+
+
+
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
 <p align="center">
