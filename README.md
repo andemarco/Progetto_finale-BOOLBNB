@@ -70,19 +70,19 @@ Pagine Sponsorizzazione(Mockup5): tramite questo pannello è possibile sponsoriz
 (RT1) Client-side Validation: tutti gli input inseriti dell’utente devono essere controllati client-side (oltre che server-side) per un controllo di veridicità (es. un numero di stanze deve essere positivo)
 (RT2) Salvataggio informazioni di geografiche: i dati riguardanti l’ubicazione degli appartamenti devono essere salvati sul database con latitudine e longitudine. Per ottenere latitudine e longitudine a partire da un indirizzo e allo stesso modo visualizzare il punto sulla mappa, utilizzare tomtom: https://developer.tomtom.com/
 (RT3) Sistema di Pagamento: il sistema di pagamento da utilizzare è braintree (https://www.braintreepayments.com/ ). Il sistema permette di simulare pagamenti senza essere approvati formalmente e senza utilizzare vere carte di credito.
-(RT4) Il sito deve essere responsive: il sito deve essere correttamente visibile da desktop e da smartphone
+(RT4) Il sito deve essere responsive: il sito deve essere correttamente visibile da desktop e da smartphone.
 
-Requisiti Funzionali
+## Requisiti Funzionali
 Nel dettaglio, la piattaforma deve soddisfare i seguenti requisiti funzionali (RF) che vengono dettagliati nelle pagine successive:
 
-(RF1) Permettere ai proprietari di appartamento di registrarti alla piattaforma
-(RF2) Permettere ai proprietari di appartamento registrati di aggiungere un appartamento alla piattaforma
-(RF3) Permette ai visitatori di ricercare una appartamento
-(RF4) Permettere ai visitatori di vedere i dettagli di un appartamento
-(RF5) Permettere ai visitatori di scrivere al proprietario di un appartamento per chiedere informazioni
-(RF6) Permettere ai proprietari di appartamento registrati di vedere le richieste ricevute
-(RF7) Permettere ai proprietari di appartamento registrati di vedere statistiche riguardo gli annunci dei propri appartamenti
-(RF8) Permettere ai proprietari di appartamento registrati di sponsorizzare il propria appartamento
+### (RF1) Permettere ai proprietari di appartamento di registrarti alla piattaforma.
+### (RF2) Permettere ai proprietari di appartamento registrati di aggiungere un appartamento alla piattaforma
+### (RF3) Permette ai visitatori di ricercare una appartamento
+### (RF4) Permettere ai visitatori di vedere i dettagli di un appartamento
+### (RF5) Permettere ai visitatori di scrivere al proprietario di un appartamento per chiedere informazioni
+### (RF6) Permettere ai proprietari di appartamento registrati di vedere le richieste ricevute
+### (RF7) Permettere ai proprietari di appartamento registrati di vedere statistiche riguardo gli annunci dei propri appartamenti
+### (RF8) Permettere ai proprietari di appartamento registrati di sponsorizzare il propria appartamento
 
 
 
